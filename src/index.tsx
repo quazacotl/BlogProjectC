@@ -1,8 +1,8 @@
 import {render} from "react-dom";
-import {TestButton} from "./components/testButton";
+import App from "./App";
 
 
 render(
-    <div><TestButton/></div>,
+    <App/>,
     document.getElementById('root')
 )
