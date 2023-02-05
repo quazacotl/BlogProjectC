@@ -3,8 +3,7 @@ import './styles/index.scss'
 import {Link, Route, Routes} from "react-router-dom";
 import {classNames} from "shared/lib/classNames/classNames";
 import {useTheme} from "app/providers/ThemeProvider";
-import {AboutPage} from "pages/AboutPage";
-import {MainPage} from "pages/MailPage";
+import {routeConfig} from "app/providers/appRouter/config/routeConfig";
 
 
 
@@ -18,8 +17,10 @@ const App = () => {
             <button onClick={toggleTheme}>TOGGLE</button>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-                    <Route path={'/about'} element={<AboutPage/>}/>
-                    <Route path={'/'} element={<MainPage/>}/>
+                    {Object.values(routeConfig).map(({path, element}) => (
+                        <Route key={path} element={element}/>
+                        )
+                    )}
                 </Routes>
             </Suspense>
         </div>
