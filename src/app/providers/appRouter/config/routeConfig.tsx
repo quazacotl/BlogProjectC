@@ -1,6 +1,6 @@
 import {AppRoutes, RoutePath} from "shared/config/routeConfigTypes";
 import {RouteProps} from "react-router-dom";
-import {MainPage} from "pages/MailPage";
+import {MainPage} from "pages/MainPage";
 import {AboutPage} from "pages/AboutPage";
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
