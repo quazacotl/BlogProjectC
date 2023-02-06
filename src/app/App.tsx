@@ -4,6 +4,7 @@ import {Link, Route, Routes} from "react-router-dom";
 import {classNames} from "shared/lib/classNames/classNames";
 import {useTheme} from "app/providers/ThemeProvider";
 import {routeConfig} from "app/providers/appRouter/config/routeConfig";
+import {Navbar} from "widgets/Navbar";
 
 
 
@@ -12,8 +13,7 @@ const App = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Link to={'/'}>Главная</Link>
-            <Link to={'/about'}>О нас</Link>
+            <Navbar/>
             <button onClick={toggleTheme}>TOGGLE</button>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
