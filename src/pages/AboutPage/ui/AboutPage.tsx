@@ -5,7 +5,7 @@ const AboutPage = () => {
 
 	return (
 		<div>
-			<h1>{t('О сайте')}</h1>
+			<h1>{t('О сайте', {ns: 'about'})}</h1>
 		</div>
 	)
 }
