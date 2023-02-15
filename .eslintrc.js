@@ -2,7 +2,7 @@ module.exports = {
 	'env': {
 		'browser': true,
 		'es2021': true,
-		jest: true
+		jest: true,
 	},
 	'extends': [
 		'eslint:recommended',
@@ -12,9 +12,10 @@ module.exports = {
 	],
 	'overrides': [
 		{
-			files: ['**/src/**/*.test.{ts,tsx}'],
+			files: ['**/src/**/*.test.{ts,tsx}', './config/storybook/**/*'],
 			rules: {
-				'i18next/no-literal-string': 0
+				'i18next/no-literal-string': 0,
+				'no-undef': 0
 			}
 		}
 	],
@@ -52,5 +53,4 @@ module.exports = {
 			'version': 'detect'
 		}
 	},
-
 }
