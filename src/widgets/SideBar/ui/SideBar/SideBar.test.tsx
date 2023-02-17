@@ -1,15 +1,15 @@
 import {fireEvent, screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
 import {SideBar} from 'widgets/SideBar'
-import {renderWithTranslation} from 'shared/lib/tests/renderWithTranslation/renderWithTranslation'
+import {componentRender} from 'shared/lib/tests/compoonentRender/componentRender'
 
 describe('Sidebar', () => {
 	test('render', () => {
-		renderWithTranslation(<SideBar/>)
+		componentRender(<SideBar/>)
 		expect(screen.getByTestId('sidebar')).toBeInTheDocument()
 	})
 	test('toggle', () => {
-		renderWithTranslation(<SideBar/>)
+		componentRender(<SideBar/>)
 		const toggleButton = screen.getByTestId('sidebar-toggle')
 		fireEvent.click(toggleButton)
 		expect(screen.getByTestId('sidebar')).toHaveClass('collapsed')

@@ -27,5 +27,5 @@ Primary.args = {
 export const Secondary = Template.bind({})
 Secondary.args = {
 	children: 'Text',
-	theme: AppLinkTheme.SECONDARY
+	theme: AppLinkTheme.INVERTED
 }
