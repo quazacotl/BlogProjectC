@@ -3,3 +3,4 @@
 .git
 webpack.config.js
 node_modules
+json-server/index.js
