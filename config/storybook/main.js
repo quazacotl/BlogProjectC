@@ -17,5 +17,6 @@ module.exports = {
 				fsCache: true,
 			},
 		}
-	}
+	},
+	staticDirs: [ '../../public' ],
 }

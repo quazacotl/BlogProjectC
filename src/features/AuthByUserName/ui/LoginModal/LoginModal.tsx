@@ -1,6 +1,6 @@
 // import {classNames} from 'shared/lib/classNames/classNames'
 import {Modal} from 'shared/ui/Modal/Modal'
-import {LoginForm} from '../LoginForm/LoginForm'
+import { MemoLoginForm} from '../LoginForm/LoginForm'
 import {Portal} from 'shared/ui/Portal/Portal'
 import React from 'react'
 
@@ -19,7 +19,7 @@ export const LoginModal = (props: LoginModalProps) => {
 				onClose={onClose}
 				// className={classNames(cls.loginModal, {}, [className])}
 			>
-				<LoginForm/>
+				<MemoLoginForm/>
 			</Modal>
 		</Portal>
 

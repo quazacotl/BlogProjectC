@@ -3,12 +3,19 @@ import {useTheme} from 'app/providers/ThemeProvider'
 import {Navbar} from 'widgets/Navbar'
 import {SideBar} from 'widgets/SideBar'
 import {AppRouter} from 'app/providers/appRouter'
-import {Suspense} from 'react'
+import {Suspense, useEffect} from 'react'
+import {useDispatch} from 'react-redux'
+import {userSlice} from 'entities/User/model/slice/userSlice'
 
 
 
 const App = () => {
 	const {theme} = useTheme()
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		dispatch(userSlice.actions.initAuthData())
+	}, [dispatch])
 
 	return (
 		<div className={classNames('app', {}, [theme])}>
