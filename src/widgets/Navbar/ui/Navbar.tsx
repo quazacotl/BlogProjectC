@@ -3,8 +3,7 @@ import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {useTranslation} from 'react-i18next'
-import {Modal} from 'shared/ui/Modal/Modal'
-import {Portal} from 'shared/ui/Portal/Portal'
+import {LoginModal} from 'features/AuthByUserName'
 
 
 interface NavbarProps {
@@ -16,8 +15,12 @@ export const Navbar = (props: NavbarProps) => {
 	const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
 
 
-	const inToggleModal = useCallback(() => {
-		setIsAuthModalOpen(prevState => !prevState)
+	const onCloseModal = useCallback(() => {
+		setIsAuthModalOpen(false)
+	}, [])
+
+	const inOpenModal = useCallback(() => {
+		setIsAuthModalOpen(true)
 	}, [])
 
 	return (
@@ -25,17 +28,11 @@ export const Navbar = (props: NavbarProps) => {
 			<Button
 				className={cls.links}
 				theme={ButtonTheme.CLEAR_INVERTED}
-				onClick={inToggleModal}
+				onClick={inOpenModal}
 			>
 				{t('Войти')}
 			</Button>
-
-			<Portal>
-				{/* eslint-disable-next-line i18next/no-literal-string */}
-				<Modal isOpen={isAuthModalOpen} onClose={inToggleModal}>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ea eos esse fuga, iste mollitia nobis numquam porro quaerat repellendus veritatis voluptate. Delectus exercitationem expedita nobis nostrum provident quos tenetur!
-				</Modal>
-			</Portal>
+			<LoginModal isOpen={isAuthModalOpen} onClose={onCloseModal}/>
 		</div>
 	)
 }

@@ -3,7 +3,6 @@ import {Counter} from './Counter'
 import {componentRender} from 'shared/lib/tests/compoonentRender/componentRender'
 import userEvent from '@testing-library/user-event'
 
-
 describe('Counter', () => {
 	test('render', () => {
 		componentRender(<Counter/>, {initialState: {counter: {value: 10}}})

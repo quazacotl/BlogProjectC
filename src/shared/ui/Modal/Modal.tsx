@@ -6,15 +6,17 @@ interface ModalProps {
 	className?: string,
 	children?: ReactNode,
 	isOpen?: boolean,
-	onClose?: () => void
+	onClose?: () => void,
+	lazy?: boolean
 }
 
 const ANIMATION_DELAY = 300
 
 export const Modal: FC<ModalProps> = (props) => {
-	const {className, children, isOpen, onClose} = props
+	const {className, children, isOpen, onClose, lazy} = props
 
 	const [isClosing, setIsClosing] = useState(false)
+	const [mounted, setMounted] = useState(false)
 	const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
 
@@ -44,6 +46,14 @@ export const Modal: FC<ModalProps> = (props) => {
 			removeEventListener('keydown', onKeyDown)
 		}
 	}, [isOpen, onKeyDown])
+
+	useEffect(() => {
+		isOpen && setMounted(true)
+	}, [isOpen])
+
+	if (lazy && !mounted) {
+		return null
+	}
 
 	return (
 		<div className={classNames(cls.modal, mods, [className]) }>
