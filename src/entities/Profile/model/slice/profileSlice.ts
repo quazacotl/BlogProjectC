@@ -17,5 +17,5 @@ export const profileSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { actions: ProfileActions } = profileSlice
-export const {reducer: ProfileReducer} = profileSlice
+export const { actions: profileActions } = profileSlice
+export const {reducer: profileReducer} = profileSlice
