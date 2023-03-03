@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import React, {memo, useCallback, useState} from 'react'
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
@@ -11,7 +11,8 @@ import {useDispatch, useSelector} from 'react-redux'
 interface NavbarProps {
     className?: string
 }
-export const Navbar = (props: NavbarProps) => {
+export const Navbar = memo((props: NavbarProps) => {
+	Navbar.displayName = 'Navbar'
 	const {className} = props
 	const {t} = useTranslation()
 	const authData = useSelector(getUserAuthData)
@@ -57,5 +58,5 @@ export const Navbar = (props: NavbarProps) => {
 			<LoginModal isOpen={isAuthModalOpen} onClose={onCloseModalHandler}/>
 		</div>
 	)
-}
+})
 

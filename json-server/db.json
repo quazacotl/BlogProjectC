@@ -5,7 +5,16 @@
   "comments": [
     { "id": "1", "body": "some comment", "postId": 1 }
   ],
-  "profile": { "name": "typicode" },
+  "profile": {
+    "first": "Dmitry",
+    "lastname": "Romanov",
+    "age": 35,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://raw.githubusercontent.com/antonmc/minifig/HEAD/output.svg?sanitize=true"
+  },
   "users": [
     {
       "id": "1",

@@ -28,23 +28,6 @@
 	margin-top: 40px;
 }
 
-.item {
-	display: flex;
-	gap: 25px;
-	align-items: center;
-	padding: 0 20px;
-}
-
-.linkName {
-	opacity: 1;
-}
-
-.icon {
-	width: var(--font-size-xl);
-	height: var(--font-size-xl);
-	fill: var(--inverted-primary-color);
-}
-
 .collapsed {
 	width: var(--sidebar-width-collapsed);
 

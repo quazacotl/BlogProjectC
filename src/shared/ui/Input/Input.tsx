@@ -8,7 +8,9 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value'
 	onChange?: (value: string) => void
 }
 
-const Input = (props: InputProps) => {
+
+export const Input = memo((props: InputProps) => {
+	Input.displayName = 'Input'
 	const {className, onChange, value, type = 'text', placeholder,  autoFocus,  ...rest} = props
 
 	const [focused, setFocused] = useState(false)
@@ -60,6 +62,4 @@ const Input = (props: InputProps) => {
 
 		</div>
 	)
-}
-
-export const MemoInput = memo(Input)
+})
