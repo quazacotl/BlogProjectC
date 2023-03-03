@@ -14,7 +14,7 @@ import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLogi
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError'
 import {ReducerList, useAddReducer} from 'shared/lib/hooks/useAddReducer'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
-import {ProfileReducer} from 'entities/Profile/model/slice/profileSlice'
+import {profileReducer} from 'entities/Profile/model/slice/profileSlice'
 
 
 interface LoginFormProps {
@@ -23,7 +23,7 @@ interface LoginFormProps {
 }
 
 const initialReducers: ReducerList = {
-	profile: ProfileReducer
+	profile: profileReducer
 }
 
 const LoginForm = (props: LoginFormProps) => {
