@@ -1,6 +1,6 @@
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames, Mods} from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
-import {FC, ReactNode, useCallback, useEffect, useRef, useState} from 'react'
+import {FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState} from 'react'
 
 interface ModalProps {
 	className?: string,
@@ -17,10 +17,10 @@ export const Modal: FC<ModalProps> = (props) => {
 
 	const [isClosing, setIsClosing] = useState(false)
 	const [mounted, setMounted] = useState(false)
-	const timerRef = useRef<ReturnType<typeof setTimeout>>()
+	const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>
 
 
-	const mods: Record<string, boolean> = {
+	const mods: Mods = {
 		[cls.opened]: isOpen,
 		[cls.isClosing]: isClosing
 	}
