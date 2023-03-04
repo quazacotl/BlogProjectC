@@ -1,10 +1,10 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import {useTranslation} from 'react-i18next'
 import {ReducerList, useAddReducer} from 'shared/lib/hooks/useAddReducer'
-import {loginReducer} from 'features/AuthByUserName'
+import {profileReducer} from 'entities/Profile'
 
 const initialReducers: ReducerList = {
-	loginForm: loginReducer
+	profile: profileReducer
 }
 interface ProfilePageProps {
     className?: string
