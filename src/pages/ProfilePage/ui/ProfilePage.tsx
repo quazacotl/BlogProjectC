@@ -1,7 +1,9 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import {useTranslation} from 'react-i18next'
 import {ReducerList, useAddReducer} from 'shared/lib/hooks/useAddReducer'
-import {profileReducer} from 'entities/Profile'
+import {fetchProfileData, ProfileCard, profileReducer} from 'entities/Profile'
+import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
+import {useEffect} from 'react'
 
 const initialReducers: ReducerList = {
 	profile: profileReducer
@@ -11,12 +13,16 @@ interface ProfilePageProps {
 }
 const ProfilePage = (props: ProfilePageProps) => {
 	const {className} = props
-	const {t} = useTranslation()
+	const dispatch = useAppDispatch()
 	useAddReducer(initialReducers)
+
+	useEffect(() => {
+		dispatch(fetchProfileData())
+	}, [dispatch])
 
 	return (
 		<div className={classNames('', {}, [className])}>
-			{t('Страница профиля')}
+			<ProfileCard/>
 		</div>
 	)
 }
