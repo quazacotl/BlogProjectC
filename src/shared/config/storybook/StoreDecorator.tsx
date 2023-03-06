@@ -1,8 +1,8 @@
 import {Story} from '@storybook/react'
 import {StateSchema, StoreProvider} from 'app/providers/StoreProvider'
 import {loginReducer} from 'features/AuthByUserName'
-import {profileReducer} from 'entities/Profile'
 import {ReducerList} from 'shared/lib/hooks/useAddReducer'
+import {profileReducer} from 'features/EditableProfileCard'
 
 
 const defaultAsyncReducers: ReducerList = {

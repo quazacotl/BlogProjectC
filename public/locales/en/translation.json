@@ -12,9 +12,11 @@
   "Переключить": "Toggle",
   "Произошла непредвиденная ошибка": "An error occured",
   "Профиль": "Profile",
-  "Редактировать": "",
+  "Редактировать": "Edit",
   "Страница не найдена": "Page not found",
   "Страница профиля": "Profile page",
+  "Укажите валюту": "Choose currency",
+  "Укажите страну": "Choose country",
   "Форма авторизации": "Authorization form",
   "Язык": "English"
 }

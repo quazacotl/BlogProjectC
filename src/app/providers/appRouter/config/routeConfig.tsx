@@ -1,11 +1,10 @@
-import {AppRoutes, RoutePath} from 'shared/config/routeConfigTypes'
-import {RouteProps} from 'react-router-dom'
+import {AppRouteProps, AppRoutes, RoutePath} from 'shared/config/routeConfigTypes'
 import {MainPage} from 'pages/MainPage'
 import {AboutPage} from 'pages/AboutPage'
 import {NotFoundPage} from 'pages/NotFoundPage'
 import {ProfilePage} from 'pages/ProfilePage'
 
-export const routeConfig: Record<AppRoutes, RouteProps> = {
+export const routeConfig: Record<AppRoutes, AppRouteProps> = {
 	[AppRoutes.MAIN]: {
 		path: RoutePath.main,
 		element: <MainPage/>
@@ -16,7 +15,8 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
 	},
 	[AppRoutes.PROFILE]: {
 		path: RoutePath.profile,
-		element: <ProfilePage/> 
+		element: <ProfilePage/> ,
+		authOnly: true
 	},
 	[AppRoutes.NOT_FOUND]: {
 		path: RoutePath['*'],

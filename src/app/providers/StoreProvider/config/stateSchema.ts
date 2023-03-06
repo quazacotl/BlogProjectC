@@ -3,10 +3,10 @@ import {UserSchema} from 'entities/User'
 import {LoginSchema} from 'features/AuthByUserName'
 import {ToolkitStore} from '@reduxjs/toolkit/dist/configureStore'
 import {AnyAction, CombinedState, Reducer, ReducersMapObject} from '@reduxjs/toolkit'
-import {ProfileSchema} from 'entities/Profile'
 import {AxiosInstance} from 'axios'
 import {To} from 'react-router-dom'
 import {NavigateOptions} from 'react-router'
+import {ProfileSchema} from 'features/EditableProfileCard'
 
 
 export interface StateSchema {
@@ -37,5 +37,6 @@ export interface ThunkExtraArgs {
 
 export interface ThunkConfig<T> {
 	rejectValue: T,
-	extra: ThunkExtraArgs
+	extra: ThunkExtraArgs,
+	state: StateSchema
 }

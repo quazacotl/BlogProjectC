@@ -1,3 +1,8 @@
+import {RouteProps} from 'react-router-dom'
+
+export interface AppRouteProps extends RouteProps {
+	authOnly?: boolean
+}
 
 export enum AppRoutes {
     MAIN = 'main',
