@@ -12,6 +12,12 @@ import {getProfileReadonly} from '../../model/selectors/getProfileReadonly/getPr
 import {getProfileForm} from '../../model/selectors/getProfileForm/getProfileForm'
 import {Currency} from 'entities/Currency'
 import {Country} from 'entities/Country'
+import {
+	getProfileValidateError
+} from 'features/EditableProfileCard/model/selectors/getProfileValidateError/getProfileValidateError'
+import {Text, TextTheme} from 'shared/ui/Text/Text'
+import {ValidateProfileError} from 'features/EditableProfileCard/model/types/profile'
+import {useTranslation} from 'react-i18next'
 
 interface EditableProfileCardProps {
     className?: string
@@ -19,10 +25,20 @@ interface EditableProfileCardProps {
 export const EditableProfileCard = (props: EditableProfileCardProps) => {
 	const {className} = props
 	const dispatch = useAppDispatch()
+	const {t} = useTranslation()
 	const form = useSelector(getProfileForm)
 	const error = useSelector(getProfileError)
 	const isLoading = useSelector(getProfileIsLoading)
 	const readonly = useSelector(getProfileReadonly)
+	const validateErrors = useSelector(getProfileValidateError)
+
+	const validateErrorTranslates = {
+		[ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера', {ns: 'profile'}),
+		[ValidateProfileError.INCORRECT_CITY]: t('Не указан город', {ns: 'profile'}),
+		[ValidateProfileError.INCORRECT_AGE]: t('Ошибка возраста', {ns: 'profile'}),
+		[ValidateProfileError.INCORRECT_USER_DATA]: t('Не задано имя или фамилия пользователя', {ns: 'profile'}),
+		[ValidateProfileError.NO_DATA]: t('Нет данных', {ns: 'profile'}),
+	}
 
 	useEffect(() => {
 		dispatch(fetchProfileData())
@@ -64,6 +80,9 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
 	return (
 		<div className={classNames('', {}, [className])}>
 			<ProfilePageHeader/>
+			{!!validateErrors?.length && validateErrors.map(err => (
+				<Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]}/>
+			))}
 			<ProfileCard
 				error={error}
 				isLoading={isLoading}
