@@ -20,7 +20,8 @@ export const parameters = {
 		default: 'normal',
 		list: [
 			{ name: 'normal', class: 'normal', color: '#c8c8c8' },
-			{ name: 'dark', class: 'dark', color: '#404142' }
+			{ name: 'dark', class: 'dark', color: '#404142' },
+			{ name: 'orange', class: 'orange', color: '#cb731a' }
 		],
 		target: '.app'
 	},
