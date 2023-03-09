@@ -3,7 +3,6 @@ import {ComponentMeta, ComponentStory} from '@storybook/react'
 import {ProfileCard} from './ProfileCard'
 import {Currency} from 'entities/Currency'
 import {Country} from 'entities/Country'
-import avatar from 'shared/assets/test/img.png'
 
 
 export default {
@@ -26,7 +25,7 @@ Common.args = {
 		country: Country.Kazakhstan,
 		city: 'Moscow',
 		username: 'username',
-		avatar: avatar
+		avatar: 'https://raw.githubusercontent.com/antonmc/minifig/HEAD/output.svg?sanitize=true'
 	}
 }
 
