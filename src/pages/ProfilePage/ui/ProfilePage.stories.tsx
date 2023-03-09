@@ -2,6 +2,9 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import ProfilePage from './ProfilePage'
 import {StoreDecorator} from 'shared/config/storybook/StoreDecorator'
+import {Currency} from 'entities/Currency'
+import {Country} from 'entities/Country'
+import avatar from 'shared/assets/test/img.png'
 
 
 
@@ -18,4 +21,17 @@ const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...
 
 export const Common = Template.bind({})
 Common.args = {}
-Common.decorators = [StoreDecorator({})]
+Common.decorators = [StoreDecorator({
+	profile: {
+		form: {
+			first: 'User',
+			lastname: 'Name',
+			age: 24,
+			currency: Currency.RUB,
+			country: Country.Kazakhstan,
+			city: 'Moscow',
+			username: 'username',
+			avatar: avatar
+		}
+	}
+})]

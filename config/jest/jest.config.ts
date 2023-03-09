@@ -34,7 +34,7 @@ export default {
 		'\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
 		'axios': 'axios/dist/node/axios.cjs'
 	},
-	globals: {__IS_DEV__: true, __API__: ''},
+	globals: {__IS_DEV__: true, __API__: '', __PROJECT__: 'jest'},
   
 
 	// All imported modules in your tests should be mocked automatically

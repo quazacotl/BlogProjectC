@@ -1,6 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import {SideBar} from './SideBar'
+import {StoreDecorator} from 'shared/config/storybook/StoreDecorator'
 
 
 
@@ -17,3 +18,16 @@ const Template: ComponentStory<typeof SideBar> = (args) => <SideBar {...args} />
 
 export const Common = Template.bind({})
 Common.args = {}
+Common.decorators = [
+	StoreDecorator({
+		user: {authData: {}}
+	})
+]
+
+export const NoAuth = Template.bind({})
+NoAuth.args = {}
+NoAuth.decorators = [
+	StoreDecorator({
+		user: {}
+	})
+]
