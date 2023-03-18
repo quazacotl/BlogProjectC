@@ -3,11 +3,13 @@ import {StateSchema, StoreProvider} from 'app/providers/StoreProvider'
 import {loginReducer} from 'features/AuthByUserName'
 import {ReducerList} from 'shared/lib/hooks/useAddReducer'
 import {profileReducer} from 'features/EditableProfileCard'
+import {articleDetailsReducer} from 'entities/Article/model/slice/articleDetailsSlice'
 
 
 const defaultAsyncReducers: ReducerList = {
 	loginForm: loginReducer,
-	profile: profileReducer
+	profile: profileReducer,
+	articleDetails: articleDetailsReducer
 }
 
 

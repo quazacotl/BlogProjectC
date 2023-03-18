@@ -16,7 +16,11 @@
 }
 
 .collapsed {
-	.item {
-		gap: 0;
+	gap: 0;
+
+	.linkName {
+		width: 0;
+		opacity: 0;
+		transition: 0.2s opacity;
 	}
 }

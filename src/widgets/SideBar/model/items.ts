@@ -2,7 +2,7 @@ import {RoutePath} from 'shared/config/routeConfigTypes'
 import HomeIcon from 'shared/assets/icons/home.svg'
 import ListIcon from 'shared/assets/icons/list.svg'
 import ProfileIcon from 'shared/assets/icons/man.svg'
-import ArticlesIcon from 'shared/assets/icons/list.svg'
+import ArticlesIcon from 'shared/assets/icons/page.svg'
 
 export interface SidebarItemType {
 	path: string,

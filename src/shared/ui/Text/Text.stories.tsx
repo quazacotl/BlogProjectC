@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import {Text, TextTheme} from './Text'
+import {Text, TextSize, TextTheme} from './Text'
 
 
 export default {
@@ -34,4 +34,11 @@ Error.args = {
 	title: 'Title',
 	text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 	theme: TextTheme.ERROR
+}
+
+export const SizeL = Template.bind({})
+SizeL.args = {
+	title: 'Title lorem ipsun',
+	text: 'Description Description Description Description',
+	size: TextSize.L,
 }
