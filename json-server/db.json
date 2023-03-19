@@ -4,6 +4,11 @@
       "id": "1",
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
     }
   ],
   "articles": [
@@ -112,13 +117,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://raw.githubusercontent.com/antonmc/minifig/HEAD/output.svg?sanitize=true"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://raw.githubusercontent.com/antonmc/minifig/HEAD/output.svg?sanitize=true"
     }
   ]
 }
