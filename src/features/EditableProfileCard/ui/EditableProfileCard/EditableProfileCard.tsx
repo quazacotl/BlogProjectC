@@ -18,6 +18,8 @@ import {
 import {Text, TextTheme} from 'shared/ui/Text/Text'
 import {ValidateProfileError} from 'features/EditableProfileCard/model/types/profile'
 import {useTranslation} from 'react-i18next'
+import {useParams} from 'react-router-dom'
+import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 
 interface EditableProfileCardProps {
     className?: string
@@ -31,6 +33,7 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
 	const isLoading = useSelector(getProfileIsLoading)
 	const readonly = useSelector(getProfileReadonly)
 	const validateErrors = useSelector(getProfileValidateError)
+	const {id} = useParams<{id: string}>()
 
 	const validateErrorTranslates = {
 		[ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера', {ns: 'profile'}),
@@ -40,11 +43,9 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
 		[ValidateProfileError.NO_DATA]: t('Нет данных', {ns: 'profile'}),
 	}
 
-	useEffect(() => {
-		if (__PROJECT__ !== 'storybook') {
-			dispatch(fetchProfileData())
-		}
-	}, [dispatch])
+	useInitialEffect(() => {
+		id && dispatch(fetchProfileData(id))
+	})
 
 	const handleChangeFirstname = useCallback((value?: string) => {
 		dispatch(profileActions.updateProfile({first: value || ''}))

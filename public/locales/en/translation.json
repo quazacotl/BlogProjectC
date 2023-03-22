@@ -1,6 +1,7 @@
 {
   "Введите username": "Enter username",
   "Введите пароль": "Enter password",
+  "Введите текст комментария": "Enter comment text",
   "Войти": "Log In",
   "Выйти": "Log out",
   "Главная": "Main page",
@@ -10,6 +11,7 @@
   "О нас": "About",
   "О сайте": "About",
   "Обновить страницу": "Reload page",
+  "Отправить": "Send",
   "Переключить": "Toggle",
   "Произошла непредвиденная ошибка": "An error occured",
   "Профиль": "Profile",

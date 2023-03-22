@@ -9,16 +9,19 @@ import {NavigateOptions} from 'react-router'
 import {ProfileSchema} from 'features/EditableProfileCard'
 import {ArticleDetailsSchema} from 'entities/Article'
 import {ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage'
+import {AddCommentFormSchema} from 'features/AddCommentForm'
 
 
 export interface StateSchema {
 	counter: CounterSchema,
 	user: UserSchema,
+
 	//async reducers
 	loginForm?: LoginSchema,
 	profile?: ProfileSchema
 	articleDetails?: ArticleDetailsSchema
 	articleDetailsComments?: ArticleDetailsCommentsSchema
+	addCommentForm?: AddCommentFormSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
