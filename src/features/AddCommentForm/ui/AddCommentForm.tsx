@@ -12,10 +12,10 @@ import {
 import {memo, useCallback} from 'react'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {addCommentFormActions, addCommentFormReducer} from '../model/slice/AddCommentFormSlice'
-import {sendComment} from '../model/services/sendComment/sendComment'
 
 interface AddCommentFormProps {
     className?: string
+	handleSendComment: (text: string) => void
 }
 
 const reducers: ReducerList = {
@@ -24,7 +24,7 @@ const reducers: ReducerList = {
 
 const AddCommentForm = memo((props: AddCommentFormProps) => {
 	AddCommentForm.displayName = 'AddCommentForm'
-	const {className} = props
+	const {className, handleSendComment} = props
 	const {t} = useTranslation()
 	const text = useSelector(getAddCommentFormText)
 	const error = useSelector(getAddCommentFormError)
@@ -35,14 +35,16 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 		dispatch(addCommentFormActions.setText(value))
 	},[dispatch])
 
-	const handleSendComment = useCallback(() => {
-		dispatch(sendComment())
-	},[dispatch])
+	const handleAddComment = useCallback(() => {
+		handleSendComment(text || '')
+		handleInputText('')
+	}, [handleInputText, handleSendComment, text])
+
 
 	return (
 		<div className={classNames(cls.addCommentForm, {}, [className])}>
 			<Input className={cls.input} value={text} onChange={handleInputText} placeholder={t('Введите текст комментария')}/>
-			<Button onClick={handleSendComment} theme={ButtonTheme.OUTLINED}>{t('Отправить')}</Button>
+			<Button onClick={handleAddComment} theme={ButtonTheme.OUTLINED}>{t('Отправить')}</Button>
 		</div>
 	)
 })

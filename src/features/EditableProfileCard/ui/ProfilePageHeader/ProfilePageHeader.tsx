@@ -9,6 +9,7 @@ import {useCallback} from 'react'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {profileActions} from '../../model/slice/profileSlice'
 import {updateProfileData} from '../../model/services/updateProfileData/updateProfileData'
+import {getUserAuthData} from 'entities/User'
 
 
 interface ProfilePageHeaderProps {
@@ -19,7 +20,10 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 	const {t} = useTranslation('profile')
 	const readonly = useSelector(getProfileReadonly)
 	const dispatch = useAppDispatch()
+	const authData = useSelector(getUserAuthData)
+	// const userData
 
+	//todo 33.05
 	const handleEdit = useCallback(() => {
 		dispatch(profileActions.setReadOnly(false))
 	}, [dispatch])

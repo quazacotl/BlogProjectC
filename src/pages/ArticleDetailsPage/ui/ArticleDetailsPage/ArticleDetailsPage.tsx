@@ -1,6 +1,6 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import {useTranslation} from 'react-i18next'
-import {memo} from 'react'
+import {memo, useCallback} from 'react'
 import {ArticleDetails} from 'entities/Article'
 import {useParams} from 'react-router-dom'
 import {Text} from 'shared/ui/Text/Text'
@@ -16,6 +16,9 @@ import {
 	fetchCommentsByArticleId
 } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import {AddCommentForm} from 'features/AddCommentForm'
+import {
+	addCommentFormForArticle
+} from 'pages/ArticleDetailsPage/model/services/addCommentFormForArticle/addCommentFormForArticle'
 
 interface ArticleDetailsPageProps {
 	className?: string
@@ -36,6 +39,10 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 	const comments = useSelector(getArticleComments.selectAll)
 	const isLoadingComments = useSelector(getArticleCommentsIsLoading)
 
+	const handleAddCommentForArticle = useCallback((text: string) => {
+		dispatch(addCommentFormForArticle(text))
+	}, [dispatch])
+
 	useInitialEffect(() => {
 		dispatch(fetchCommentsByArticleId(id))
 	})
@@ -53,7 +60,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 		<div className={classNames('', {}, [className])}>
 			<ArticleDetails id={id || '1'}/>
 			<Text className={cls.commentTitle} title={t('Комментарии', {ns: 'article'})}></Text>
-			<AddCommentForm/>
+			<AddCommentForm handleSendComment={handleAddCommentForArticle}/>
 			<CommentList comments={comments} isLoading={isLoadingComments}/>
 		</div>
 	)
