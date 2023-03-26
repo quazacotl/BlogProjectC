@@ -14,11 +14,11 @@ import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {
 	fetchCommentsByArticleId
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import {AddCommentForm} from 'features/AddCommentForm'
 import {
 	addCommentFormForArticle
-} from 'pages/ArticleDetailsPage/model/services/addCommentFormForArticle/addCommentFormForArticle'
+} from '../../model/services/addCommentFormForArticle/addCommentFormForArticle'
 
 interface ArticleDetailsPageProps {
 	className?: string

@@ -10,6 +10,7 @@ import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {profileActions} from '../../model/slice/profileSlice'
 import {updateProfileData} from '../../model/services/updateProfileData/updateProfileData'
 import {getUserAuthData} from 'entities/User'
+import {getProfileData} from 'features/EditableProfileCard/model/selectors/getProfileData/getProfileData'
 
 
 interface ProfilePageHeaderProps {
@@ -21,7 +22,8 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 	const readonly = useSelector(getProfileReadonly)
 	const dispatch = useAppDispatch()
 	const authData = useSelector(getUserAuthData)
-	// const userData
+	const profileData = useSelector(getProfileData)
+	const canEdit = authData?.id === profileData?.id
 
 	//todo 33.05
 	const handleEdit = useCallback(() => {
@@ -40,18 +42,23 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 		<div className={classNames(cls.profilePageHeader, {}, [className])}>
 			<div className={cls.header}>
 				<Text title={t('Профиль', {ns: 'profile'})}/>
-				{readonly ?
-					<Button theme={ButtonTheme.OUTLINED} onClick={handleEdit}>
-						{t('Редактировать', {ns: 'profile'})}
-					</Button> :
-					<div className={cls.buttons}>
-						<Button theme={ButtonTheme.OUTLINED} onClick={handleSave}>
-							{t('Сохранить', {ns: 'profile'})}
-						</Button>
-						<Button theme={ButtonTheme.OUTLINED_RED} onClick={handleCancelEdit}>
-							{t('Отменить', {ns: 'profile'})}
-						</Button>
+				{canEdit && (
+					<div className={cls.btnsWrapper}>
+						{readonly ?
+							<Button theme={ButtonTheme.OUTLINED} onClick={handleEdit}>
+								{t('Редактировать', {ns: 'profile'})}
+							</Button> :
+							<div className={cls.buttons}>
+								<Button theme={ButtonTheme.OUTLINED} onClick={handleSave}>
+									{t('Сохранить', {ns: 'profile'})}
+								</Button>
+								<Button theme={ButtonTheme.OUTLINED_RED} onClick={handleCancelEdit}>
+									{t('Отменить', {ns: 'profile'})}
+								</Button>
+							</div>
+						}
 					</div>
+				)
 				}
 			</div>
 		</div>

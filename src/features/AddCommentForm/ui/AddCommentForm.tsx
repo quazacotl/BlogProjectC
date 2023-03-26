@@ -6,7 +6,6 @@ import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {ReducerList, useAddReducer} from 'shared/lib/hooks/useAddReducer'
 import {useSelector} from 'react-redux'
 import {
-	getAddCommentFormError,
 	getAddCommentFormText
 } from '../model/selectors/AddCommentFormSelectors'
 import {memo, useCallback} from 'react'
@@ -27,7 +26,6 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 	const {className, handleSendComment} = props
 	const {t} = useTranslation()
 	const text = useSelector(getAddCommentFormText)
-	const error = useSelector(getAddCommentFormError)
 	const dispatch = useAppDispatch()
 	useAddReducer(reducers)
 

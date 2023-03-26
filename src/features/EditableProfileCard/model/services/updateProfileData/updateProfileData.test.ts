@@ -12,7 +12,7 @@ const data = {
 	currency: Currency.RUB,
 	country: Country.Kazakhstan,
 	city: 'Moscow',
-	username: 'username',
+	username: 'username'
 }
 
 describe('updateProfileData.test', () => {
