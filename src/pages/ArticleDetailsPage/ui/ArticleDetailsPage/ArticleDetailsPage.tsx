@@ -2,7 +2,7 @@ import {classNames} from 'shared/lib/classNames/classNames'
 import {useTranslation} from 'react-i18next'
 import {memo, useCallback} from 'react'
 import {ArticleDetails} from 'entities/Article'
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import {Text} from 'shared/ui/Text/Text'
 import {CommentList} from 'entities/Comment'
 import cls from './ArticleDetailsPage.module.scss'
@@ -12,13 +12,11 @@ import {useSelector} from 'react-redux'
 import {getArticleCommentsIsLoading} from '../../model/selectors/comments'
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
-import {
-	fetchCommentsByArticleId
-} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import {fetchCommentsByArticleId} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import {AddCommentForm} from 'features/AddCommentForm'
-import {
-	addCommentFormForArticle
-} from '../../model/services/addCommentFormForArticle/addCommentFormForArticle'
+import {addCommentFormForArticle} from '../../model/services/addCommentFormForArticle/addCommentFormForArticle'
+import {Button, ButtonTheme} from 'shared/ui/Button/Button'
+import {RoutePath} from 'shared/config/routeConfigTypes'
 
 interface ArticleDetailsPageProps {
 	className?: string
@@ -34,6 +32,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 	const dispatch = useAppDispatch()
 	const {t} = useTranslation('article')
 	const {id} = useParams<{id: string}>()
+	const navigate = useNavigate()
 	useAddReducer(reducers)
 
 	const comments = useSelector(getArticleComments.selectAll)
@@ -47,6 +46,10 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 		dispatch(fetchCommentsByArticleId(id))
 	})
 
+	const handleBack = useCallback(() => {
+		navigate(RoutePath.articles)
+	}, [navigate])
+
 	if (!id && __PROJECT__ !== 'storybook') {
 		return (
 			<div className={classNames('', {}, [className])}>
@@ -58,6 +61,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
 	return (
 		<div className={classNames('', {}, [className])}>
+			<Button onClick={handleBack} theme={ButtonTheme.OUTLINED}>{t('Назад к списку', {ns: 'article'})}</Button>
 			<ArticleDetails id={id || '1'}/>
 			<Text className={cls.commentTitle} title={t('Комментарии', {ns: 'article'})}></Text>
 			<AddCommentForm handleSendComment={handleAddCommentForArticle}/>
