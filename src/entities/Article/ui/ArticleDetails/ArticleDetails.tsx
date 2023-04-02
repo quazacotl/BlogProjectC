@@ -95,7 +95,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 		content = (
 			<Text
 				align={'center'}
-				title={t('Произошла ошибка при загрузке статьи.', {ns: 'article'})}
+				title={t('Произошла ошибка при загрузке статьи.')}
 			/>
 		)
 	} else {

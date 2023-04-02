@@ -36,7 +36,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 	const views = (
 		<>
 			<Text text={String(article.views)} className={cls.views} />
-			<Icon Svg={EyeIcon} />
+			<Icon Svg={EyeIcon} className={cls.icon}/>
 		</>
 	)
 
@@ -61,7 +61,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 					)}
 					<div className={cls.footer}>
 						<Button onClick={onOpenArticle} theme={ButtonTheme.OUTLINED}>
-							{t('Читать далее...')}
+							{/*{t('Читать далее...')}*/}
+							Читать далее...
 						</Button>
 						{views}
 					</div>

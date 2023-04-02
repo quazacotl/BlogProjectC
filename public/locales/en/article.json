@@ -2,9 +2,8 @@
   "Детали статьи": "Article details",
   "Комментарии": "Comments",
   "Назад к списку": "Back to list",
-  "Произошла ошибка при загрузке статьи": {
-    "": ""
-  },
+  "Произошла ошибка при загрузке статьи": "Error while loading article",
   "Статья не найдена": "Article not found",
-  "Страница статей": "Articles page"
+  "Страница статей": "Articles page",
+  "Читать далее": "Read more"
 }
