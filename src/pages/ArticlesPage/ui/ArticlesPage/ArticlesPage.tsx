@@ -7,14 +7,11 @@ import {articlesPageActions, articlesPageReducer, getArticles} from '../../model
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import {useSelector} from 'react-redux'
-import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList'
-import {
-	getArticlesPageIsLoading,
-	getArticlesPageView
-} from '../../model/selectors/articlesPageSelectors'
+import {getArticlesPageIsLoading, getArticlesPageView} from '../../model/selectors/articlesPageSelectors'
 import {ViewSelector} from 'features/ViewSelector'
 import {Page} from 'shared/ui/Page/Page'
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlePage/fetchNextArticlePage'
+import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage'
 
 interface ArticlesPageProps {
     className?: string
@@ -28,7 +25,7 @@ const reducers: ReducerList = {
 const ArticlesPage = memo((props: ArticlesPageProps) => {
 	ArticlesPage.displayName = 'ArticlesPage'
 	const {className} = props
-	useAddReducer(reducers)
+	useAddReducer(reducers, false)
 	const dispatch = useAppDispatch()
 	const articles = useSelector(getArticles.selectAll)
 	const isLoading = useSelector(getArticlesPageIsLoading)
@@ -40,8 +37,7 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
 	}, [dispatch])
 
 	useInitialEffect(() => {
-		dispatch(articlesPageActions.initState())
-		dispatch(fetchArticlesList({page: 1}))
+		dispatch(initArticlesPage())
 	})
 
 	const handleViewClick = useCallback((view: ArticleView) => {
