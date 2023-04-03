@@ -4,6 +4,7 @@ import {CounterReducer} from 'entities/Counter'
 import {userReducer} from 'entities/User'
 import {createReducerManager} from 'app/providers/StoreProvider/config/reducerManager'
 import {$api} from 'shared/api/api'
+import {GetScrollPositionPageReducer} from 'widgets/Page'
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -12,6 +13,7 @@ export function createReduxStore(
 		...asyncReducers,
 		counter: CounterReducer,
 		user: userReducer,
+		getScrollPosition: GetScrollPositionPageReducer
 	}
 
 

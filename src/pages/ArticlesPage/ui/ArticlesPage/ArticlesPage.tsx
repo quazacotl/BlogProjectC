@@ -9,9 +9,9 @@ import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import {useSelector} from 'react-redux'
 import {getArticlesPageIsLoading, getArticlesPageView} from '../../model/selectors/articlesPageSelectors'
 import {ViewSelector} from 'features/ViewSelector'
-import {Page} from 'shared/ui/Page/Page'
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlePage/fetchNextArticlePage'
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage'
+import { Page } from 'widgets/Page'
 
 interface ArticlesPageProps {
     className?: string

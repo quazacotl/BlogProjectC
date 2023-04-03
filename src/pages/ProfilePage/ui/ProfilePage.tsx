@@ -1,7 +1,7 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import {ReducerList, useAddReducer} from 'shared/lib/hooks/useAddReducer'
 import {EditableProfileCard, profileReducer} from 'features/EditableProfileCard'
-import {Page} from 'shared/ui/Page/Page'
+import {Page} from 'widgets/Page'
 
 const initialReducers: ReducerList = {
 	profile: profileReducer

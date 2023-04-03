@@ -4,18 +4,18 @@ import {LoginSchema} from 'features/AuthByUserName'
 import {ToolkitStore} from '@reduxjs/toolkit/dist/configureStore'
 import {AnyAction, CombinedState, Reducer, ReducersMapObject} from '@reduxjs/toolkit'
 import {AxiosInstance} from 'axios'
-import {To} from 'react-router-dom'
-import {NavigateOptions} from 'react-router'
 import {ProfileSchema} from 'features/EditableProfileCard'
 import {ArticleDetailsSchema} from 'entities/Article'
 import {ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage'
 import {AddCommentFormSchema} from 'features/AddCommentForm'
 import {ArticlesPageSchema} from 'pages/ArticlesPage'
+import {GetScrollPositionSchema} from 'widgets/Page'
 
 
 export interface StateSchema {
 	counter: CounterSchema,
 	user: UserSchema,
+	getScrollPosition: GetScrollPositionSchema
 
 	//async reducers
 	loginForm?: LoginSchema,
