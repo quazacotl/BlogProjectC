@@ -1,5 +1,4 @@
 import {classNames} from 'shared/lib/classNames/classNames'
-import {useTranslation} from 'react-i18next'
 import {memo, useCallback} from 'react'
 import cls from './ArticlesPage.module.scss'
 import {ArticleList, ArticleView} from 'entities/Article'
@@ -10,11 +9,12 @@ import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import {useSelector} from 'react-redux'
 import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList'
 import {
-	getArticlesPageError,
 	getArticlesPageIsLoading,
 	getArticlesPageView
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
+} from '../../model/selectors/articlesPageSelectors'
 import {ViewSelector} from 'features/ViewSelector'
+import {Page} from 'shared/ui/Page/Page'
+import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlePage/fetchNextArticlePage'
 
 interface ArticlesPageProps {
     className?: string
@@ -28,32 +28,35 @@ const reducers: ReducerList = {
 const ArticlesPage = memo((props: ArticlesPageProps) => {
 	ArticlesPage.displayName = 'ArticlesPage'
 	const {className} = props
-	const {t} = useTranslation('article')
 	useAddReducer(reducers)
 	const dispatch = useAppDispatch()
 	const articles = useSelector(getArticles.selectAll)
 	const isLoading = useSelector(getArticlesPageIsLoading)
-	const error = useSelector(getArticlesPageError)
 	const view = useSelector(getArticlesPageView)
 
+
+	const onLoadNextPart = useCallback(() => {
+		dispatch(fetchNextArticlesPage())
+	}, [dispatch])
+
 	useInitialEffect(() => {
-		dispatch(fetchArticlesList())
+		dispatch(articlesPageActions.initState())
+		dispatch(fetchArticlesList({page: 1}))
 	})
 
 	const handleViewClick = useCallback((view: ArticleView) => {
 		dispatch(articlesPageActions.setView(view))
-		dispatch(articlesPageActions.initState())
 	}, [dispatch])
 
 	return (
-		<div className={classNames(cls.ArticlesPage, {}, [className])}>
+		<Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
 			<ViewSelector view={view} onViewClick={handleViewClick}/>
 			<ArticleList
 				isLoading={isLoading}
 				view={view}
 				articles={articles}
 			/>
-		</div>
+		</Page>
 	)
 })
 

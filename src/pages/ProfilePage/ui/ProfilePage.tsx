@@ -1,6 +1,7 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import {ReducerList, useAddReducer} from 'shared/lib/hooks/useAddReducer'
 import {EditableProfileCard, profileReducer} from 'features/EditableProfileCard'
+import {Page} from 'shared/ui/Page/Page'
 
 const initialReducers: ReducerList = {
 	profile: profileReducer
@@ -15,9 +16,9 @@ const ProfilePage = (props: ProfilePageProps) => {
 
 
 	return (
-		<div className={classNames('', {}, [className])}>
+		<Page className={classNames('', {}, [className])}>
 			<EditableProfileCard/>
-		</div>
+		</Page>
 	)
 }
 

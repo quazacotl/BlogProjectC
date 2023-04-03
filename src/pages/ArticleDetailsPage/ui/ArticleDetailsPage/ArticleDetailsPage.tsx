@@ -17,6 +17,7 @@ import {AddCommentForm} from 'features/AddCommentForm'
 import {addCommentFormForArticle} from '../../model/services/addCommentFormForArticle/addCommentFormForArticle'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {RoutePath} from 'shared/config/routeConfigTypes'
+import {Page} from 'shared/ui/Page/Page'
 
 interface ArticleDetailsPageProps {
 	className?: string
@@ -60,13 +61,13 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
 
 	return (
-		<div className={classNames('', {}, [className])}>
+		<Page className={classNames('', {}, [className])}>
 			<Button onClick={handleBack} theme={ButtonTheme.OUTLINED}>{t('Назад к списку', {ns: 'article'})}</Button>
 			<ArticleDetails id={id || '1'}/>
 			<Text className={cls.commentTitle} title={t('Комментарии', {ns: 'article'})}></Text>
 			<AddCommentForm handleSendComment={handleAddCommentForArticle}/>
 			<CommentList comments={comments} isLoading={isLoadingComments}/>
-		</div>
+		</Page>
 	)
 
 })
