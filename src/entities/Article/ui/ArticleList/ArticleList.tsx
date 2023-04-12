@@ -1,10 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
-import { memo } from 'react'
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton'
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
+import {classNames} from 'shared/lib/classNames/classNames'
+import {useTranslation} from 'react-i18next'
+import {memo} from 'react'
+import {ArticleListItemSkeleton} from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton'
+import {ArticleListItem} from '../ArticleListItem/ArticleListItem'
 import cls from './ArticleList.module.scss'
-import { Article, ArticleView } from '../../model/types/article'
+import {Article, ArticleView} from '../../model/types/article'
+import {Text, TextSize} from 'shared/ui/Text/Text'
 
 interface ArticleListProps {
     className?: string;
@@ -39,12 +40,20 @@ export const ArticleList = memo((props: ArticleListProps) => {
 		/>
 	)
 
-	return (
-		<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-			{articles.length > 0
-				? articles.map(renderArticle)
-				: null}
-			{isLoading && getSkeletons(view)}
-		</div>
-	)
+	if (!isLoading && !articles.length) {
+		return (
+			<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+				<Text size={TextSize.L} title={t('Не найдено ни одной статьи')}/>
+			</div>
+		)
+	} else {
+		return (
+			<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+				{articles.length > 0
+					? articles.map(renderArticle)
+					: null}
+				{isLoading && getSkeletons(view)}
+			</div>
+		)
+	}
 })
