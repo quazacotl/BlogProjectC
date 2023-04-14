@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve --env port=3000",
     "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production",
+    "build:prod": "webpack --env mode=production apiUrl=https://parseapi.back4app.com",
     "start:dev:server": "node ./json-server/index.js",
     "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\"",
     "eslint:check": "eslint \"**/*.{ts,tsx}\"",
@@ -58,6 +58,7 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-i18next-extract": "^0.9.0",
     "concurrently": "^7.6.0",
+    "copy-webpack-plugin": "^11.0.0",
     "cors": "^2.8.5",
     "css-loader": "^6.6.0",
     "eslint": "^8.10.0",

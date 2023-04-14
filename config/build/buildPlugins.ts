@@ -3,8 +3,9 @@ import webpack from 'webpack'
 import {BuildOptions} from './types/config'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer'
+import CopyPlugin from 'copy-webpack-plugin'
 
-export function buildPlugins({paths: {html}, isDev, apiUrl, project}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({paths: {html, locales, buildLocales}, isDev, apiUrl, project}: BuildOptions): webpack.WebpackPluginInstance[] {
 	const plugins: webpack.WebpackPluginInstance[]  =  [
 		new HtmlWebpackPlugin({
 			template: html
@@ -19,7 +20,11 @@ export function buildPlugins({paths: {html}, isDev, apiUrl, project}: BuildOptio
 			__API__: JSON.stringify(apiUrl),
 			__PROJECT__: JSON.stringify(project)
 		}),
-
+		new CopyPlugin({
+			patterns: [
+				{ from: locales, to: buildLocales },
+			],
+		}),
 	]
 
 	isDev && plugins.push(new BundleAnalyzerPlugin({
