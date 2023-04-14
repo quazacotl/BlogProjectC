@@ -6,10 +6,10 @@ import {AnyAction, CombinedState, Reducer, ReducersMapObject} from '@reduxjs/too
 import {AxiosInstance} from 'axios'
 import {ProfileSchema} from 'features/EditableProfileCard'
 import {ArticleDetailsSchema} from 'entities/Article'
-import {ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage'
 import {AddCommentFormSchema} from 'features/AddCommentForm'
 import {ArticlesPageSchema} from 'pages/ArticlesPage'
 import {GetScrollPositionSchema} from 'widgets/Page'
+import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage'
 
 
 export interface StateSchema {
@@ -21,9 +21,9 @@ export interface StateSchema {
 	loginForm?: LoginSchema,
 	profile?: ProfileSchema
 	articleDetails?: ArticleDetailsSchema
-	articleDetailsComments?: ArticleDetailsCommentsSchema
 	addCommentForm?: AddCommentFormSchema
 	articlesPage?: ArticlesPageSchema
+	articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

@@ -5,7 +5,7 @@ import {ReducerList} from 'shared/lib/hooks/useAddReducer'
 import {profileReducer} from 'features/EditableProfileCard'
 import {articleDetailsReducer} from 'entities/Article/model/slice/articleDetailsSlice'
 import {addCommentFormReducer} from 'features/AddCommentForm/model/slice/AddCommentFormSlice'
-import {articleDetailsCommentsReducer} from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice'
+import {articleDetailsPageReducer} from 'pages/ArticleDetailsPage'
 
 
 const defaultAsyncReducers: ReducerList = {
@@ -13,7 +13,7 @@ const defaultAsyncReducers: ReducerList = {
 	profile: profileReducer,
 	articleDetails: articleDetailsReducer,
 	addCommentForm: addCommentFormReducer,
-	articleDetailsComments: articleDetailsCommentsReducer
+	articleDetailsPage: articleDetailsPageReducer
 }
 
 
