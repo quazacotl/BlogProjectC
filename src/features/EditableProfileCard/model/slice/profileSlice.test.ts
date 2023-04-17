@@ -1,10 +1,8 @@
-
 import {profileActions, profileReducer} from './profileSlice'
-import {ProfileSchema} from 'features/EditableProfileCard'
+import {ProfileSchema, ValidateProfileError} from '../types/profile'
 import {Currency} from 'entities/Currency'
 import {Country} from 'entities/Country'
-import {updateProfileData} from 'features/EditableProfileCard/model/services/updateProfileData/updateProfileData'
-import {ValidateProfileError} from 'features/EditableProfileCard/model/types/profile'
+import {updateProfileData} from '../services/updateProfileData/updateProfileData'
 
 const data = {
 	first: 'User',

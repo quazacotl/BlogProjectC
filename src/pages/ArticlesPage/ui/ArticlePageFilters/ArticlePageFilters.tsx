@@ -1,7 +1,7 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './ArticlePageFilters.module.scss'
 import {ViewSelector} from 'features/ViewSelector'
-import {useCallback, useMemo} from 'react'
+import {useCallback} from 'react'
 import {ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleView} from 'entities/Article'
 import {articlesPageActions} from '../../model/slices/articlesPageSlice'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
@@ -17,7 +17,6 @@ import {Input} from 'shared/ui/Input/Input'
 import {SortOrder} from 'shared/types'
 import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList'
 import {useDebounce} from 'shared/lib/hooks/useDebounce'
-import {TabItem, Tabs} from 'shared/ui/Tabs/Tabs'
 import {ArticleType} from 'entities/Article'
 
 interface ArticlePageFiltersProps {
@@ -48,7 +47,7 @@ export const ArticlePageFilters = (props: ArticlePageFiltersProps) => {
 	const handleTabClick = useCallback((type: ArticleType) => {
 		dispatch(articlesPageActions.setType(type))
 		fetchData()
-	}, [dispatch])
+	}, [dispatch, fetchData])
 
 	const handleSort = useCallback((sort: ArticleSortField) => {
 		dispatch(articlesPageActions.setSort(sort))

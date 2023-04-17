@@ -1,6 +1,6 @@
 import {Select, SelectOption} from 'shared/ui/Select/Select'
 import {useTranslation} from 'react-i18next'
-import {Currency} from 'entities/Currency'
+import {Currency} from '../../model/types/currency'
 import {memo, useCallback} from 'react'
 
 interface CurrencySelectProps {

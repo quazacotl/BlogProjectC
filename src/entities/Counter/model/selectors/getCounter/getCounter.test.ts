@@ -1,4 +1,4 @@
-import {getCounter} from 'entities/Counter/model/selectors/getCounter/getCounter'
+import {getCounter} from '../../../model/selectors/getCounter/getCounter'
 import {StateSchema} from 'app/providers/StoreProvider'
 
 describe('getCounter', () => {

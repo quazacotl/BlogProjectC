@@ -8,7 +8,7 @@ import {useLocation} from 'react-router-dom'
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import {useSelector} from 'react-redux'
 import {StateSchema} from 'app/providers/StoreProvider'
-import {getScrollByPath} from 'widgets/Page'
+import {getScrollByPath} from '../../GetScrollPosition/model/selectors/GetScrollPositionSelector'
 import {useThrottle} from 'shared/lib/hooks/useThrottle'
 
 interface PageProps {

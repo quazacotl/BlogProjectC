@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
 import {HTMLAttributeAnchorTarget, memo, useCallback} from 'react'
 import { Text } from 'shared/ui/Text/Text'
 import { Icon } from 'shared/ui/Icon/Icon'
@@ -16,6 +15,7 @@ import {
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import {RoutePath} from 'shared/config/routeConfigTypes'
 import {AppLink} from 'shared/ui/AppLink/AppLink'
+import {useTranslation} from 'react-i18next'
 
 interface ArticleListItemProps {
     className?: string;
@@ -27,8 +27,8 @@ interface ArticleListItemProps {
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
 	ArticleListItem.displayName = 'ArticleListItem'
 	const { className, article, view, target } = props
-	const { t } = useTranslation()
 	const navigate = useNavigate()
+	const {t} = useTranslation()
 
 	const onOpenArticle = useCallback(() => {
 		navigate(RoutePath['article-details'] + article.id)
@@ -63,8 +63,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 					)}
 					<div className={cls.footer}>
 						<AppLink to={RoutePath['article-details'] + article.id}>
-							<Button onClick={onOpenArticle} theme={ButtonTheme.OUTLINED}>
+							<Button
+								onClick={onOpenArticle}
+								theme={ButtonTheme.OUTLINED}
+							>
 								Читать далее...
+								{/*{t('Читать далее...')}*/}
 							</Button>
 						</AppLink>
 						{views}

@@ -8,7 +8,7 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:react/recommended',
 		'plugin:@typescript-eslint/recommended',
-		'plugin:i18next/recommended',
+		'plugin:i18next/recommended'
 	],
 	'overrides': [
 		{
@@ -28,7 +28,8 @@ module.exports = {
 		'react',
 		'@typescript-eslint',
 		'i18next',
-		'react-hooks'
+		'react-hooks',
+		'eslint-plugin-fsd-imports',
 	],
 	'rules': {
 		'indent': [
@@ -49,7 +50,8 @@ module.exports = {
 		],
 		'react/react-in-jsx-scope': 0,
 		"react-hooks/rules-of-hooks": "error",
-		"react-hooks/exhaustive-deps": "error"
+		"react-hooks/exhaustive-deps": "error",
+		"fsd-imports/path-checker": 'error'
 	},
 	'settings': {
 		'react': {

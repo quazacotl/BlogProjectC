@@ -1,6 +1,6 @@
 .eslintrc.js
 .idea
 .git
-webpack.config.js
+webpack.config.ts
 node_modules
 json-server/index.js

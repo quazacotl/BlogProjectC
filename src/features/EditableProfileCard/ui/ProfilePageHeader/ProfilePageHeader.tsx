@@ -10,7 +10,7 @@ import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {profileActions} from '../../model/slice/profileSlice'
 import {updateProfileData} from '../../model/services/updateProfileData/updateProfileData'
 import {getUserAuthData} from 'entities/User'
-import {getProfileData} from 'features/EditableProfileCard/model/selectors/getProfileData/getProfileData'
+import {getProfileData} from '../../model/selectors/getProfileData/getProfileData'
 
 
 interface ProfilePageHeaderProps {
