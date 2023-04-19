@@ -22,6 +22,7 @@ import {getArticleRecom} from '../../model/slices/ADRecomSlice'
 import {getADRecomIsLoading} from '../../model/selectors/reconmmendations'
 import {fetchArticlesRecom} from '../../model/services/fetchArticleRecom/fetchArticleRecom'
 import {articleDetailsPageReducer} from '../../model/slices'
+import {VStack} from 'shared/ui/Stack'
 
 interface ArticleDetailsPageProps {
 	className?: string
@@ -69,13 +70,15 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
 	return (
 		<Page className={classNames('', {}, [className])}>
-			<Button onClick={handleBack} theme={ButtonTheme.OUTLINED}>{t('Назад к списку', {ns: 'article'})}</Button>
-			<ArticleDetails id={id || '1'}/>
-			<Text size={TextSize.L} className={cls.commentTitle} title={t('Рекомендуем', {ns: 'article'})}></Text>
-			<ArticleList target={'_blank'} className={cls.recom} articles={recommends} isLoading={isLoadingRecom}/>
-			<Text size={TextSize.L} className={cls.commentTitle} title={t('Комментарии', {ns: 'article'})}></Text>
-			<AddCommentForm handleSendComment={handleAddCommentForArticle}/>
-			<CommentList comments={comments} isLoading={isLoadingComments}/>
+			<VStack gap={'32'} max>
+				<Button onClick={handleBack} theme={ButtonTheme.OUTLINED}>{t('Назад к списку', {ns: 'article'})}</Button>
+				<ArticleDetails id={id || '1'}/>
+				<Text size={TextSize.L} title={t('Рекомендуем', {ns: 'article'})}></Text>
+				<ArticleList target={'_blank'} className={cls.recom} articles={recommends} isLoading={isLoadingRecom}/>
+				<Text size={TextSize.L} title={t('Комментарии', {ns: 'article'})}></Text>
+				<AddCommentForm handleSendComment={handleAddCommentForArticle}/>
+				<CommentList comments={comments} isLoading={isLoadingComments}/>
+			</VStack>
 		</Page>
 	)
 

@@ -20,6 +20,7 @@ import {ValidateProfileError} from '../../model/types/profile'
 import {useTranslation} from 'react-i18next'
 import {useParams} from 'react-router-dom'
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
+import {VStack} from 'shared/ui/Stack'
 
 interface EditableProfileCardProps {
     className?: string
@@ -82,24 +83,26 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
 
 	return (
 		<div className={classNames('', {}, [className])}>
-			<ProfilePageHeader/>
-			{!!validateErrors?.length && validateErrors.map(err => (
-				<Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]}/>
-			))}
-			<ProfileCard
-				error={error}
-				isLoading={isLoading}
-				data={form}
-				readonly={readonly}
-				handleChangeFirstname={handleChangeFirstname}
-				handleChangeLastname={handleChangeLastname}
-				handleChangeCity={handleChangeCity}
-				handleChangeAge={handleChangeAge}
-				handleChangeUsername={handleChangeUsername}
-				handleChangeAvatar={handleChangeAvatar}
-				handleChangeCurrency={handleChangeCurrency}
-				handleChangeCountry={handleChangeCountry}
-			/>
+			<VStack max={true} gap={'32'}>
+				<ProfilePageHeader/>
+				{!!validateErrors?.length && validateErrors.map(err => (
+					<Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]}/>
+				))}
+				<ProfileCard
+					error={error}
+					isLoading={isLoading}
+					data={form}
+					readonly={readonly}
+					handleChangeFirstname={handleChangeFirstname}
+					handleChangeLastname={handleChangeLastname}
+					handleChangeCity={handleChangeCity}
+					handleChangeAge={handleChangeAge}
+					handleChangeUsername={handleChangeUsername}
+					handleChangeAvatar={handleChangeAvatar}
+					handleChangeCurrency={handleChangeCurrency}
+					handleChangeCountry={handleChangeCountry}
+				/>
+			</VStack>
 		</div>
 	)
 }

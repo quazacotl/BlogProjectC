@@ -8,7 +8,7 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:react/recommended',
 		'plugin:@typescript-eslint/recommended',
-		'plugin:i18next/recommended'
+		// 'plugin:i18next/recommended'
 	],
 	'overrides': [
 		{

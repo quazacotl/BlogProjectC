@@ -11,6 +11,7 @@ import {
 import {memo, useCallback} from 'react'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {addCommentFormActions, addCommentFormReducer} from '../model/slice/AddCommentFormSlice'
+import {HStack} from 'shared/ui/Stack'
 
 interface AddCommentFormProps {
     className?: string
@@ -40,10 +41,10 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
 
 	return (
-		<div className={classNames(cls.addCommentForm, {}, [className])}>
+		<HStack gap={'16'} max justify={'between'} className={classNames(cls.addCommentForm, {}, [className])}>
 			<Input className={cls.input} value={text} onChange={handleInputText} placeholder={t('Введите текст комментария')}/>
 			<Button onClick={handleAddComment} theme={ButtonTheme.OUTLINED}>{t('Отправить')}</Button>
-		</div>
+		</HStack>
 	)
 })
 
