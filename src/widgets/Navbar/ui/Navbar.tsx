@@ -6,6 +6,9 @@ import {useTranslation} from 'react-i18next'
 import {LoginModal} from 'features/AuthByUserName'
 import {getUserAuthData, userActions} from 'entities/User'
 import {useDispatch, useSelector} from 'react-redux'
+import {Dropdown} from 'shared/ui/Dropdown/Dropdown'
+import {Avatar} from 'shared/ui/Avatar/Avatar'
+import {RoutePath} from 'shared/config/routeConfigTypes'
 
 
 interface NavbarProps {
@@ -35,13 +38,15 @@ export const Navbar = memo((props: NavbarProps) => {
 	if (authData) {
 		return (
 			<div className={classNames(cls.navbar, {}, [className])}>
-				<Button
-					className={cls.links}
-					theme={ButtonTheme.CLEAR_INVERTED}
-					onClick={logoutHandler}
-				>
-					{t('Выйти')}
-				</Button>
+				<Dropdown
+					direction={'bottom left'}
+					className={cls.dropdown}
+					items={[
+						{content: t('Выйти'), onClick: logoutHandler},
+						{content: t('Профиль'), href: RoutePath.profile + authData.id}
+					]}
+					trigger={<Avatar size={30} src={authData.avatar}/>}
+				/>
 			</div>
 		)
 	}
