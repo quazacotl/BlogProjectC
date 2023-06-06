@@ -4,3 +4,4 @@
 webpack.config.ts
 node_modules
 json-server/index.js
+scripts
