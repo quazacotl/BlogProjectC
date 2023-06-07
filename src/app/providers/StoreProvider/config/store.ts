@@ -5,6 +5,7 @@ import {userReducer} from 'entities/User'
 import {createReducerManager} from 'app/providers/StoreProvider/config/reducerManager'
 import {$api} from 'shared/api/api'
 import {GetScrollPositionPageReducer} from 'widgets/Page'
+import {rtkApi} from 'shared/api/rtkApi'
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -13,7 +14,8 @@ export function createReduxStore(
 		...asyncReducers,
 		counter: CounterReducer,
 		user: userReducer,
-		getScrollPosition: GetScrollPositionPageReducer
+		getScrollPosition: GetScrollPositionPageReducer,
+		[rtkApi.reducerPath]: rtkApi.reducer
 	}
 
 
@@ -30,7 +32,7 @@ export function createReduxStore(
 					api: $api
 				}
 			}
-		})
+		}).concat(rtkApi.middleware)
 	})
 
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment

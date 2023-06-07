@@ -2,6 +2,9 @@ import {classNames} from 'shared/lib/classNames/classNames'
 import {ReducerList, useAddReducer} from 'shared/lib/hooks/useAddReducer'
 import {EditableProfileCard, profileReducer} from 'features/EditableProfileCard'
 import {Page} from 'widgets/Page'
+import {Text} from 'shared/ui/Text/Text'
+import {useParams} from 'react-router-dom'
+import {useTranslation} from 'react-i18next'
 
 const initialReducers: ReducerList = {
 	profile: profileReducer
@@ -12,12 +15,14 @@ interface ProfilePageProps {
 const ProfilePage = (props: ProfilePageProps) => {
 	const {className} = props
 	useAddReducer(initialReducers)
+	const {t} = useTranslation()
+	const {id} = useParams<{id: string}>()
 
-
+	if (!id) return <Text text={t('Профиль не найден')}/>
 
 	return (
 		<Page className={classNames('', {}, [className])}>
-			<EditableProfileCard/>
+			<EditableProfileCard id={id}/>
 		</Page>
 	)
 }

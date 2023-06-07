@@ -24,9 +24,10 @@ import {VStack} from 'shared/ui/Stack'
 
 interface EditableProfileCardProps {
     className?: string
+	id: string
 }
 export const EditableProfileCard = (props: EditableProfileCardProps) => {
-	const {className} = props
+	const {className, id} = props
 	const dispatch = useAppDispatch()
 	const {t} = useTranslation()
 	const form = useSelector(getProfileForm)
@@ -34,7 +35,7 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
 	const isLoading = useSelector(getProfileIsLoading)
 	const readonly = useSelector(getProfileReadonly)
 	const validateErrors = useSelector(getProfileValidateError)
-	const {id} = useParams<{id: string}>()
+
 
 	const validateErrorTranslates = {
 		[ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера', {ns: 'profile'}),

@@ -10,12 +10,14 @@ import {AddCommentFormSchema} from 'features/AddCommentForm'
 import {ArticlesPageSchema} from 'pages/ArticlesPage'
 import {GetScrollPositionSchema} from 'widgets/Page'
 import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage'
+import {rtkApi} from 'shared/api/rtkApi'
 
 
 export interface StateSchema {
 	counter: CounterSchema,
 	user: UserSchema,
 	getScrollPosition: GetScrollPositionSchema
+	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
 	//async reducers
 	loginForm?: LoginSchema,
