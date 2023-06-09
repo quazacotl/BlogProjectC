@@ -16,7 +16,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
 	const { t } = useTranslation()
 	const {data, isLoading, error} = useGetArticleRecommendationsListQuery(3)
 
-	if (isLoading || error) return null
+	if (isLoading || error || !data) return null
 	
 	return (
 		<VStack gap={'32'} max className={classNames('', {}, [className])}>

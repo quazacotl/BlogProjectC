@@ -82,11 +82,11 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
 
 
 	return (
-		<div className={classNames('', {}, [className])}>
+		<div className={classNames('', {}, [className])} data-testid={'EditableProfileCard'}>
 			<VStack max={true} gap={'32'}>
 				<ProfilePageHeader/>
 				{!!validateErrors?.length && validateErrors.map(err => (
-					<Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]}/>
+					<Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} data-testid={'EditableProfileCard.Error'}/>
 				))}
 				<ProfileCard
 					error={error}

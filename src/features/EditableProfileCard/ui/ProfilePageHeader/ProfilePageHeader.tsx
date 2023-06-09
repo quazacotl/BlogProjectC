@@ -44,14 +44,14 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 			{canEdit && (
 				<>
 					{readonly ?
-						<Button theme={ButtonTheme.OUTLINED} onClick={handleEdit}>
+						<Button theme={ButtonTheme.OUTLINED} onClick={handleEdit} data-testid={'ProfilePageHeader.EditButton'}>
 							{t('Редактировать', {ns: 'profile'})}
 						</Button> :
 						<HStack gap={'16'}>
-							<Button theme={ButtonTheme.OUTLINED} onClick={handleSave}>
+							<Button theme={ButtonTheme.OUTLINED} onClick={handleSave} data-testid={'ProfilePageHeader.SaveButton'}>
 								{t('Сохранить', {ns: 'profile'})}
 							</Button>
-							<Button theme={ButtonTheme.OUTLINED_RED} onClick={handleCancelEdit}>
+							<Button theme={ButtonTheme.OUTLINED_RED} onClick={handleCancelEdit} data-testid={'ProfilePageHeader.CancelButton'}>
 								{t('Отменить', {ns: 'profile'})}
 							</Button>
 						</HStack>
