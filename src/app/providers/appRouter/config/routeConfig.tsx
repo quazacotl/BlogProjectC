@@ -5,6 +5,9 @@ import {NotFoundPage} from 'pages/NotFoundPage'
 import {ProfilePage} from 'pages/ProfilePage'
 import {ArticlesPage} from 'pages/ArticlesPage'
 import {ArticleDetailsPage} from 'pages/ArticleDetailsPage'
+import {AdminPanelPage} from 'pages/AdminPanelPage'
+import {UserRole} from 'entities/User'
+import {ForbiddenPage} from 'pages/ForbiddenPage'
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
 	[AppRoutes.MAIN]: {
@@ -29,6 +32,16 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
 		path: `${RoutePath['article-details']}:id`,
 		element: <ArticleDetailsPage/> ,
 		authOnly: true
+	},
+	[AppRoutes.ADMIN_PANEL]: {
+		path: `${RoutePath['admin-panel']}`,
+		element: <AdminPanelPage/> ,
+		authOnly: true,
+		roles: [UserRole.MANAGER, UserRole.ADMIN]
+	},
+	[AppRoutes.FORBIDDEN_PAGE]: {
+		path: `${RoutePath['forbidden-page']}`,
+		element: <ForbiddenPage/> ,
 	},
 	[AppRoutes.NOT_FOUND]: {
 		path: RoutePath['*'],

@@ -1,5 +1,6 @@
 {
   "": "",
+  "Админка": "Admin panel",
   "Айти": "IT",
   "Введите username": "Enter username",
   "Введите пароль": "Enter password",
@@ -8,6 +9,7 @@
   "Все": "All",
   "Выйти": "Log out",
   "Главная": "Main page",
+  "Доступ запрещён": "Access denied",
   "Комментарии отсутствуют": "There are no comments",
   "Короткий язык": "En",
   "Наука": "Science",
@@ -17,6 +19,7 @@
   "О сайте": "About",
   "Обновить страницу": "Reload page",
   "Отправить": "Send",
+  "Панель администратора": "Admin panel",
   "Переключить": "Toggle",
   "По ": "",
   "Поиск": "Search",

@@ -4,7 +4,7 @@ import cls from './Navbar.module.scss'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {useTranslation} from 'react-i18next'
 import {LoginModal} from 'features/AuthByUserName'
-import {getUserAuthData, userActions} from 'entities/User'
+import {getUserAuthData, isUserAdmin, isUserManager, userActions} from 'entities/User'
 import {useDispatch, useSelector} from 'react-redux'
 import {Dropdown} from 'shared/ui/Dropdown/Dropdown'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
@@ -21,6 +21,10 @@ export const Navbar = memo((props: NavbarProps) => {
 	const authData = useSelector(getUserAuthData)
 	const dispatch = useDispatch()
 	const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
+	const isAdmin = useSelector(isUserAdmin)
+	const isManager = useSelector(isUserManager)
+
+	const isAdminAvailable = isAdmin || isManager
 
 
 	const onCloseModalHandler = useCallback(() => {
@@ -43,7 +47,8 @@ export const Navbar = memo((props: NavbarProps) => {
 					className={cls.dropdown}
 					items={[
 						{content: t('Выйти'), onClick: logoutHandler},
-						{content: t('Профиль'), href: RoutePath.profile + authData.id}
+						{content: t('Профиль'), href: RoutePath.profile + authData.id},
+						...(isAdminAvailable ? [{content: t('Админка'), href: RoutePath['admin-panel']}] : [])
 					]}
 					trigger={<Avatar size={30} src={authData.avatar}/>}
 				/>

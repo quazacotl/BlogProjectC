@@ -590,14 +590,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://raw.githubusercontent.com/antonmc/minifig/HEAD/output.svg?sanitize=true"
     },
     {
       "id": "2",
       "username": "uname",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png"
+    },
+    {
+      "id": "3",
+      "username": "man",
+      "password": "123",
+      "roles": ["MANAGER"],
       "avatar": "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png"
     }
   ]
