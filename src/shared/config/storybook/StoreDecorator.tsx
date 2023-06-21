@@ -1,4 +1,4 @@
-import {Story} from '@storybook/react'
+import {StoryFn} from '@storybook/react'
 import {StateSchema, StoreProvider} from 'app/providers/StoreProvider'
 import {loginReducer} from 'features/AuthByUserName'
 import {ReducerList} from 'shared/lib/hooks/useAddReducer'
@@ -17,8 +17,8 @@ const defaultAsyncReducers: ReducerList = {
 }
 
 
-// eslint-disable-next-line react/display-name
-export const StoreDecorator = (state: DeepPartial<StateSchema>, asyncReducers?: ReducerList) => (Story: Story) => (
+
+export const StoreDecorator = (state: DeepPartial<StateSchema>, asyncReducers?: ReducerList) => (Story: StoryFn) => (
 	<StoreProvider initialState={state} asyncReducers={{...defaultAsyncReducers, ...asyncReducers}}>
 		<Story />
 	</StoreProvider>
