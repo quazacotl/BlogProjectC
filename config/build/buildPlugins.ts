@@ -4,6 +4,7 @@ import {BuildOptions} from './types/config'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer'
 import CopyPlugin from 'copy-webpack-plugin'
+import CDP from 'circular-dependency-plugin'
 
 export function buildPlugins({paths: {html, locales, buildLocales}, isDev, apiUrl, project}: BuildOptions): webpack.WebpackPluginInstance[] {
 	const plugins: webpack.WebpackPluginInstance[]  =  [
@@ -25,6 +26,10 @@ export function buildPlugins({paths: {html, locales, buildLocales}, isDev, apiUr
 				{ from: locales, to: buildLocales },
 			],
 		}),
+		new CDP({
+			exclude: /node_modules/,
+			failOnError: true
+		})
 	]
 
 	isDev && plugins.push(new BundleAnalyzerPlugin({
