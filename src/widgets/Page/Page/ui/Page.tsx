@@ -25,12 +25,13 @@ export const Page = (props: PageProps) => {
 	const scrollPosition = useSelector((state: StateSchema) => getScrollByPath(state, pathname))
 
 
-	//todo выяснить почему начало сыпаться
 	useInfiniteScroll({
 		triggerRef,
 		wrapperRef,
 		callback: onScrollEnd
 	})
+
+
 
 	const handleScroll = useThrottle((e: UIEvent<HTMLElement>) => {
 		dispatch(GetScrollPositionPageActions.setScrollPosition({

@@ -1,30 +1,14 @@
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import {BuildOptions} from './types/config'
+import {buildBabelLoader} from './loaders/babelLoader'
 
-export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+	const {isDev} = options
 
-	const babelLoader = {
-		test: /\.(js|jsx|ts|tsx)$/,
-		exclude: /node_modules/,
-		use: {
-			loader: 'babel-loader',
-			options: {
-				presets: ['@babel/preset-env'],
-				plugins: [
-					[
-						'i18next-extract',
-						{
-							locales: ['en', 'ru'],
-							keyAsDefaultValue: false,
-							saveMissing: true,
-							outputPath: 'public/locales/{{locale}}/{{ns}}.json',
-						},
-					],
-				],
-			}
-		}
-	}
+	const codeBabelLoader = buildBabelLoader({...options, isTsx: false})
+	const tsxBabelLoader = buildBabelLoader({...options, isTsx: true})
+
 
 	const fileLoader = {
 		test: /\.(png|jpe?g|gif|woff2|woff)$/i,
@@ -58,15 +42,10 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
 		],
 	}
 
-	const typescriptLoader = {
-		test: /\.tsx?$/,
-		use: 'ts-loader',
-		exclude: /node_modules/,
-	}
 
 	return [
-		babelLoader,
-		typescriptLoader,
+		codeBabelLoader,
+		tsxBabelLoader,
 		styleLoader,
 		svgLoader,
 		fileLoader,
