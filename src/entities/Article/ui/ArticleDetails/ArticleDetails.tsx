@@ -19,10 +19,11 @@ import {
 	getArticleDetailsError,
 	getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails'
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article'
+import { ArticleBlock } from '../../model/types/article'
 import {ReducerList, useAddReducer} from 'shared/lib/hooks/useAddReducer'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
 import {HStack, VStack} from 'shared/ui/Stack'
+import {ArticleBlockType} from 'entities/Article/model/consts/articleConsts'
 
 interface ArticleDetailsProps {
     className?: string;

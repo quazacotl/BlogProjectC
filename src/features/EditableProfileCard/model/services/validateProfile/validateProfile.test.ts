@@ -1,7 +1,8 @@
 import {Currency} from 'entities/Currency'
 import {Country} from 'entities/Country'
 import {validateProfileData} from './validateProfile'
-import {ValidateProfileError} from '../../../model/types/profile'
+import {ValidateProfileError} from '../../consts/editableProfileCardConsts'
+
 
 const data = {
 	first: 'User',

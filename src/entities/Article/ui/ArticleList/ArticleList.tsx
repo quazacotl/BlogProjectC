@@ -4,8 +4,9 @@ import {HTMLAttributeAnchorTarget, memo} from 'react'
 import {ArticleListItemSkeleton} from '../ArticleListItem/ArticleListItemSkeleton'
 import {ArticleListItem} from '../ArticleListItem/ArticleListItem'
 import cls from './ArticleList.module.scss'
-import {Article, ArticleView} from '../../model/types/article'
+import {Article} from '../../model/types/article'
 import {Text, TextSize} from 'shared/ui/Text/Text'
+import {ArticleView} from 'entities/Article'
 
 interface ArticleListProps {
     className?: string;

@@ -1,8 +1,8 @@
-import {Select, SelectOption} from 'shared/ui/Select/Select'
+import {SelectOption} from 'shared/ui/Select/Select'
 import {useTranslation} from 'react-i18next'
 
 import {memo, useCallback} from 'react'
-import {Country} from '../../model/types/country'
+import {Country} from '../../model/consts/country'
 import {ListBox} from 'shared/ui/ListBox/ListBox'
 
 interface CountrySelectProps {

@@ -24,6 +24,8 @@ export const Page = (props: PageProps) => {
 	const {pathname} = useLocation()
 	const scrollPosition = useSelector((state: StateSchema) => getScrollByPath(state, pathname))
 
+
+	//todo выяснить почему начало сыпаться
 	useInfiniteScroll({
 		triggerRef,
 		wrapperRef,
@@ -42,7 +44,9 @@ export const Page = (props: PageProps) => {
 	})
 
 	return (
-		<main onScroll={handleScroll} ref={wrapperRef} className={classNames(cls.page, {}, [className])}>
+		<main
+			onScroll={handleScroll}
+			ref={wrapperRef} className={classNames(cls.page, {}, [className])}>
 			{children}
 			{onScrollEnd &&  <div className={cls.trigger} ref={triggerRef}/>}
 		</main>

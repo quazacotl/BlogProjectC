@@ -10,12 +10,13 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { useNavigate } from 'react-router-dom'
 import cls from './ArticleListItem.module.scss'
 import {
-	Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+	Article, ArticleTextBlock,
 } from '../../model/types/article'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import {RoutePath} from 'shared/config/routeConfigTypes'
 import {AppLink} from 'shared/ui/AppLink/AppLink'
 import {useTranslation} from 'react-i18next'
+import {ArticleBlockType, ArticleView} from 'entities/Article/model/consts/articleConsts'
 
 interface ArticleListItemProps {
     className?: string;

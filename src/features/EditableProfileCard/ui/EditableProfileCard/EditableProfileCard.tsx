@@ -16,10 +16,10 @@ import {
 	getProfileValidateError
 } from '../../model/selectors/getProfileValidateError/getProfileValidateError'
 import {Text, TextTheme} from 'shared/ui/Text/Text'
-import {ValidateProfileError} from '../../model/types/profile'
 import {useTranslation} from 'react-i18next'
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect'
 import {VStack} from 'shared/ui/Stack'
+import {ValidateProfileError} from 'features/EditableProfileCard/model/consts/editableProfileCardConsts'
 
 interface EditableProfileCardProps {
     className?: string
