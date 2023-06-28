@@ -4,11 +4,11 @@ import cls from './Navbar.module.scss'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {useTranslation} from 'react-i18next'
 import {LoginModal} from 'features/AuthByUserName'
-import {getUserAuthData, isUserAdmin, isUserManager, userActions} from 'entities/User'
-import {useDispatch, useSelector} from 'react-redux'
-import {Dropdown} from 'shared/ui/Dropdown/Dropdown'
-import {Avatar} from 'shared/ui/Avatar/Avatar'
-import {RoutePath} from 'shared/config/routeConfigTypes'
+import {getUserAuthData} from 'entities/User'
+import {useSelector} from 'react-redux'
+import {HStack} from 'shared/ui/Stack'
+import {NotificationButton} from 'features/notificationButton'
+import {AvatarDropdown} from 'features/avatarDropdown'
 
 
 interface NavbarProps {
@@ -19,12 +19,7 @@ export const Navbar = memo((props: NavbarProps) => {
 	const {className} = props
 	const {t} = useTranslation()
 	const authData = useSelector(getUserAuthData)
-	const dispatch = useDispatch()
 	const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
-	const isAdmin = useSelector(isUserAdmin)
-	const isManager = useSelector(isUserManager)
-
-	const isAdminAvailable = isAdmin || isManager
 
 
 	const onCloseModalHandler = useCallback(() => {
@@ -35,24 +30,15 @@ export const Navbar = memo((props: NavbarProps) => {
 		setIsAuthModalOpen(true)
 	}, [])
 
-	const logoutHandler = useCallback(() => {
-		dispatch(userActions.logout())
-	}, [dispatch])
 
 	if (authData) {
 		return (
-			<div className={classNames(cls.navbar, {}, [className])}>
-				<Dropdown
-					direction={'bottom left'}
-					className={cls.dropdown}
-					items={[
-						{content: t('Выйти'), onClick: logoutHandler},
-						{content: t('Профиль'), href: RoutePath.profile + authData.id},
-						...(isAdminAvailable ? [{content: t('Админка'), href: RoutePath['admin-panel']}] : [])
-					]}
-					trigger={<Avatar size={30} src={authData.avatar}/>}
-				/>
-			</div>
+			<header className={classNames(cls.navbar, {}, [className])}>
+				<HStack gap="16" className={cls.actions}>
+					<NotificationButton />
+					<AvatarDropdown />
+				</HStack>
+			</header>
 		)
 	}
 
@@ -65,7 +51,12 @@ export const Navbar = memo((props: NavbarProps) => {
 			>
 				{t('Войти')}
 			</Button>
-			<LoginModal isOpen={isAuthModalOpen} onClose={onCloseModalHandler}/>
+			{isAuthModalOpen && (
+				<LoginModal
+					isOpen={isAuthModalOpen}
+					onClose={onCloseModalHandler}
+				/>
+			)}
 		</header>
 	)
 })
