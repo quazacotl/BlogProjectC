@@ -1,7 +1,6 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import {Modal} from './Modal'
-
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Modal } from './Modal'
 
 export default {
 	title: 'shared/Modal',
@@ -16,7 +15,11 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />
 export const Primary = Template.bind({})
 Primary.args = {
 	isOpen: true,
-	children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ea eos esse fuga, iste mollitia nobis numquam porro quaerat repellendus veritatis voluptate. Delectus exercitationem expedita nobis nostrum provident quos tenetur!',
+	children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\n ',
 }
 
-
+export const Dark = Template.bind({})
+Dark.args = {
+	isOpen: true,
+	children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\n ',
+}

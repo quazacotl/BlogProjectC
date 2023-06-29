@@ -1,10 +1,14 @@
-.modal {
+.Modal {
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	z-index: -1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--primary-color);
 	opacity: 0;
 	pointer-events: none;
 }
@@ -19,7 +23,7 @@
 }
 
 .content {
-	max-width: 50%;
+	max-width: 60%;
 	padding: 20px;
 	background: var(--bg-color);
 	border-radius: 12px;
@@ -28,7 +32,7 @@
 }
 
 .opened {
-	z-index: var(--modal-index);
+	z-index: var(--modal-z-index);
 	opacity: 1;
 	pointer-events: auto;
 
