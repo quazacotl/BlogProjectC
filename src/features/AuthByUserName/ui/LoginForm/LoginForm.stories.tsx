@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import MemoLoginForm from './LoginForm'
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator'
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator'
 
 
 export default {

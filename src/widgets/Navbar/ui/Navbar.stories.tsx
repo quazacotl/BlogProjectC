@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import {Navbar} from './Navbar'
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator'
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator'
 
 
 

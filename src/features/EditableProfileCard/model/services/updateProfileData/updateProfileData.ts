@@ -1,9 +1,9 @@
 import {createAsyncThunk} from '@reduxjs/toolkit'
-import {ThunkConfig} from 'app/providers/StoreProvider'
+import {ThunkConfig} from '@/app/providers/StoreProvider'
 import {Profile} from '../../types/profile'
 import {getProfileForm} from '../../../model/selectors/getProfileForm/getProfileForm'
 import {validateProfileData} from '../../../model/services/validateProfile/validateProfile'
-import {ValidateProfileError} from 'features/EditableProfileCard/model/consts/editableProfileCardConsts'
+import {ValidateProfileError} from '@/features/EditableProfileCard/model/consts/editableProfileCardConsts'
 
 
 

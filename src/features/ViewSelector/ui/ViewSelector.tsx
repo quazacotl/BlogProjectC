@@ -1,10 +1,10 @@
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './ViewSelector.module.scss'
-import {ArticleView} from 'entities/Article'
-import ListViewIcon from 'shared/assets/icons/ListView.svg'
-import TileViewIcon from 'shared/assets/icons/TileView.svg'
-import {Button, ButtonTheme} from 'shared/ui/Button/Button'
-import {Icon} from 'shared/ui/Icon/Icon'
+import {ArticleView} from '@/entities/Article'
+import ListViewIcon from '@/shared/assets/icons/ListView.svg'
+import TileViewIcon from '@/shared/assets/icons/TileView.svg'
+import {Button, ButtonTheme} from '@/shared/ui/Button/Button'
+import {Icon} from '@/shared/ui/Icon/Icon'
 
 interface ViewSelectorProps {
     className?: string

@@ -1,5 +1,5 @@
-import {Currency} from 'entities/Currency'
-import {Country} from 'entities/Country'
+import {Currency} from '@/entities/Currency'
+import {Country} from '@/entities/Country'
 import {validateProfileData} from './validateProfile'
 import {ValidateProfileError} from '../../consts/editableProfileCardConsts'
 

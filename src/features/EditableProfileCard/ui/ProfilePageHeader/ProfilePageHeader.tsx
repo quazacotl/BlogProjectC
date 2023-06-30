@@ -1,16 +1,16 @@
-import {classNames} from 'shared/lib/classNames/classNames'
-import {Text} from 'shared/ui/Text/Text'
-import {Button, ButtonTheme} from 'shared/ui/Button/Button'
+import {classNames} from '@/shared/lib/classNames/classNames'
+import {Text} from '@/shared/ui/Text/Text'
+import {Button, ButtonTheme} from '@/shared/ui/Button/Button'
 import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
 import {getProfileReadonly} from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import {useCallback} from 'react'
-import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch'
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {profileActions} from '../../model/slice/profileSlice'
 import {updateProfileData} from '../../model/services/updateProfileData/updateProfileData'
-import {getUserAuthData} from 'entities/User'
+import {getUserAuthData} from '@/entities/User'
 import {getProfileData} from '../../model/selectors/getProfileData/getProfileData'
-import {HStack} from 'shared/ui/Stack'
+import {HStack} from '@/shared/ui/Stack'
 
 
 interface ProfilePageHeaderProps {

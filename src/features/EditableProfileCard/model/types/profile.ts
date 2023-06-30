@@ -1,6 +1,6 @@
-import {Currency} from 'entities/Currency/model/consts/currency'
-import {Country} from 'entities/Country/model/consts/country'
-import {ValidateProfileError} from 'features/EditableProfileCard/model/consts/editableProfileCardConsts'
+import {Currency} from '@/entities/Currency/model/consts/currency'
+import {Country} from '@/entities/Country/model/consts/country'
+import {ValidateProfileError} from '@/features/EditableProfileCard/model/consts/editableProfileCardConsts'
 
 export interface Profile {
 	id?: string,
