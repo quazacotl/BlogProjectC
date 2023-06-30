@@ -4,6 +4,7 @@ import path from 'path'
 const pathToInlineSvg = path.resolve(__dirname, '../../src/shared/assets/icons')
 export default ({config}: {config: webpack.Configuration}) => {
 	config.resolve!.modules!.push(path.resolve(__dirname, '..', '..', 'src'))
+	config!.resolve!.alias = { '@': path.resolve(__dirname, '..', '..', 'src') };
 	// config.resolve.extensions.push('.ts', '.tsx')
 
 	//eslint-disable-next-line

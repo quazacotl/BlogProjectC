@@ -22,7 +22,7 @@ const profile: Profile = {
 
 describe('features/EditableProfileCard', () => {
 	beforeEach( () => {
-		 componentRender(<EditableProfileCard id={'1'}/>, {
+		componentRender(<EditableProfileCard id={'1'}/>, {
 			initialState: {
 				profile: {
 					data: profile,

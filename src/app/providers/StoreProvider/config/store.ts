@@ -1,6 +1,5 @@
 import {CombinedState, configureStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit'
 import {StateSchema} from './stateSchema'
-import {CounterReducer} from '@/entities/Counter'
 import {userReducer} from '@/entities/User'
 import {createReducerManager} from '@/app/providers/StoreProvider/config/reducerManager'
 import {$api} from '@/shared/api/api'
@@ -12,7 +11,6 @@ export function createReduxStore(
 	asyncReducers?: ReducersMapObject<StateSchema>) {
 	const rootReducer: ReducersMapObject<StateSchema> = {
 		...asyncReducers,
-		counter: CounterReducer,
 		user: userReducer,
 		getScrollPosition: GetScrollPositionPageReducer,
 		[rtkApi.reducerPath]: rtkApi.reducer

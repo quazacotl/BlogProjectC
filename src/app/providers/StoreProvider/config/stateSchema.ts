@@ -1,4 +1,3 @@
-import {CounterSchema} from '@/entities/Counter'
 import {UserSchema} from '@/entities/User'
 import {LoginSchema} from '@/features/AuthByUserName'
 import {ToolkitStore} from '@reduxjs/toolkit/dist/configureStore'
@@ -14,7 +13,6 @@ import {rtkApi} from '@/shared/api/rtkApi'
 
 
 export interface StateSchema {
-	counter: CounterSchema,
 	user: UserSchema,
 	getScrollPosition: GetScrollPositionSchema
 	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
