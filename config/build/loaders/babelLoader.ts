@@ -24,12 +24,12 @@ export function buildBabelLoader({isDev, isTsx}: buildBabelLoaderProps) {
 						},
 					],
 					[
-						"@babel/plugin-transform-typescript",
+						'@babel/plugin-transform-typescript',
 						{
 							isTsx
 						}
 					],
-					["@babel/plugin-transform-runtime"],
+					['@babel/plugin-transform-runtime'],
 					isTsx && [
 						babelRemovePropsPlugin,
 						{

@@ -11,7 +11,7 @@ interface ArticleInfiniteListProps {
     className?: string
 }
 export const ArticleInfiniteList = (props: ArticleInfiniteListProps) => {
-    const {className} = props
+	const {className} = props
 	const articles = useSelector(getArticles.selectAll)
 	const isLoading = useSelector(getArticlesPageIsLoading)
 	const view = useSelector(getArticlesPageView)
@@ -23,12 +23,12 @@ export const ArticleInfiniteList = (props: ArticleInfiniteListProps) => {
 	})
 
 
-    return (
+	return (
 		<ArticleList
 			className={className}
 			isLoading={isLoading}
 			view={view}
 			articles={articles}
 		/>
-    );
-};
+	)
+}

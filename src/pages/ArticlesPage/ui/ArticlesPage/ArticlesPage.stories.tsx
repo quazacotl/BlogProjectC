@@ -4,43 +4,43 @@ import ArticlesPage from './ArticlesPage'
 
 const articles = [
 	{
-		"id": "1",
-		"title": "Javascript news СВЕЖАЯ",
-		"subtitle": "Что нового в JS за 2022 год?",
-		"img": "",
-		"views": 1022,
-		"createdAt": "26.04.2022",
-		"userId": "1",
-		"type": [
-			"IT"
+		'id': '1',
+		'title': 'Javascript news СВЕЖАЯ',
+		'subtitle': 'Что нового в JS за 2022 год?',
+		'img': '',
+		'views': 1022,
+		'createdAt': '26.04.2022',
+		'userId': '1',
+		'type': [
+			'IT'
 		],
-		"blocks": []
+		'blocks': []
 	},
 	{
-		"id": "2",
-		"title": "Javascript news СВЕЖАЯ",
-		"subtitle": "Что нового в JS за 2022 год?",
-		"img": "",
-		"views": 1022,
-		"createdAt": "26.04.2022",
-		"userId": "1",
-		"type": [
-			"IT"
+		'id': '2',
+		'title': 'Javascript news СВЕЖАЯ',
+		'subtitle': 'Что нового в JS за 2022 год?',
+		'img': '',
+		'views': 1022,
+		'createdAt': '26.04.2022',
+		'userId': '1',
+		'type': [
+			'IT'
 		],
-		"blocks": []
+		'blocks': []
 	},
 	{
-		"id": "3",
-		"title": "Javascript news СВЕЖАЯ",
-		"subtitle": "Что нового в JS за 2022 год?",
-		"img": "",
-		"views": 1022,
-		"createdAt": "26.04.2022",
-		"userId": "1",
-		"type": [
-			"IT"
+		'id': '3',
+		'title': 'Javascript news СВЕЖАЯ',
+		'subtitle': 'Что нового в JS за 2022 год?',
+		'img': '',
+		'views': 1022,
+		'createdAt': '26.04.2022',
+		'userId': '1',
+		'type': [
+			'IT'
 		],
-		"blocks": []
+		'blocks': []
 	}
 ]
 

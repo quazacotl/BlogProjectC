@@ -39,7 +39,7 @@ describe('features/EditableProfileCard', () => {
 			asyncReducers: {
 				profile: profileReducer
 			}
-		});
+		})
 	})
 
 	test('render', () => {
