@@ -69,50 +69,50 @@ export const ProfileCard = (props: ProfileCardProps) => {
 			}
 			<Input
 				readonly={readonly}
-				value={data?.first}
+				value={data?.first || ''}
 				onChange={handleChangeFirstname}
 				placeholder={t('Ваше имя', {ns: 'profile'})}
 				data-testid={'ProfileCard.firstname'}
 			/>
 			<Input
 				readonly={readonly}
-				value={data?.lastname}
+				value={data?.lastname || ''}
 				onChange={handleChangeLastname}
 				placeholder={t('Ваша фамилия', {ns: 'profile'})}
 				data-testid={'ProfileCard.lastname'}
 			/>
 			<Input
 				readonly={readonly}
-				value={data?.city}
+				value={data?.city || ''}
 				onChange={handleChangeCity}
 				placeholder={t('Город', {ns: 'profile'})}
 			/>
 			<Input
 				type={'number'}
 				readonly={readonly}
-				value={data?.age}
+				value={data?.age || ''}
 				onChange={handleChangeAge}
 				placeholder={t('Возраст', {ns: 'profile'})}
 			/>
 			<Input
 				readonly={readonly}
-				value={data?.username}
+				value={data?.username || ''}
 				onChange={handleChangeUsername}
 				placeholder={t('Имя пользователя', {ns: 'profile'})}
 			/>
 			<Input
 				readonly={readonly}
-				value={data?.avatar}
+				value={data?.avatar || ''}
 				onChange={handleChangeAvatar}
 				placeholder={t('Ссылка на аватар', {ns: 'profile'})}
 			/>
 			<CurrencySelect
-				value={data?.currency}
+				value={data?.currency || Currency.RUB}
 				onChange={handleChangeCurrency}
 				readonly={readonly}
 			/>
 			<CountrySelect
-				value={data?.country}
+				value={data?.country || Country.Russia}
 				onChange={handleChangeCountry}
 				readonly={readonly}
 			/>
