@@ -11,6 +11,7 @@ import {articleDetailsPageReducer} from '../../model/slices'
 import {VStack} from '@/shared/ui/Stack'
 import {ArticleRecommendationsList} from '@/features/articleRecommendationsList'
 import {ArticleDetailsComment} from '../ArticleDetailsComment/ArticleDetailsComment'
+import {ArticleRating} from '@/features/articleRating'
 
 interface ArticleDetailsPageProps {
 	className?: string
@@ -41,12 +42,16 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 		)
 	}
 
+	if (!id) {
+		return null
+	}
 
 	return (
 		<Page className={classNames('', {}, [className])}>
 			<VStack gap={'32'} max>
 				<Button onClick={handleBack} theme={ButtonTheme.OUTLINED}>{t('Назад к списку', {ns: 'article'})}</Button>
 				<ArticleDetails id={id || '1'}/>
+				<ArticleRating articleId={id}/>
 				<ArticleRecommendationsList/>
 				<ArticleDetailsComment id={id || '1'}/>
 			</VStack>

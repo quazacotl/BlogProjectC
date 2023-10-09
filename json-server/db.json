@@ -647,5 +647,48 @@
       ],
       "avatar": "https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 5,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Норм статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 2,
+      "feedback": "так себе",
+      "id": "WryliT6"
+    },
+    {
+      "userId": "1",
+      "articleId": "14",
+      "rate": 1,
+      "id": "y7B7VSI"
+    },
+    {
+      "userId": "1",
+      "articleId": "15",
+      "rate": 5,
+      "feedback": "отличная с инфалидацией",
+      "id": "aP6zfOy"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 3,
+      "feedback": "на троечку",
+      "id": "pa2LQp1"
+    }
   ]
 }
