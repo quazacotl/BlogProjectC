@@ -1,5 +1,5 @@
-import {Currency} from '@/entities/currency'
-import {Country} from '@/entities/country'
+import {Currency} from '@/entities/Currency'
+import {CountryEnum} from '@/entities/Country'
 import {ValidateProfileError} from '../consts/editableProfileCardConsts'
 
 export interface Profile {
@@ -8,7 +8,7 @@ export interface Profile {
 	lastname?: string,
 	age?: number,
 	currency?: Currency,
-	country?: Country,
+	country?: CountryEnum,
 	city?: string,
 	username?: string,
 	avatar?: string

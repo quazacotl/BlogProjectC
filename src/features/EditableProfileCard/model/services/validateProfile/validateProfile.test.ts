@@ -1,5 +1,5 @@
 import {Currency} from '@/entities/Currency'
-import {Country} from '@/entities/Country'
+import {CountryEnum} from '@/entities/Country'
 import {validateProfileData} from './validateProfile'
 import {ValidateProfileError} from '../../consts/editableProfileCardConsts'
 
@@ -9,7 +9,7 @@ const data = {
 	lastname: 'Name',
 	age: 24,
 	currency: Currency.RUB,
-	country: Country.Kazakhstan,
+	country: CountryEnum.Kazakhstan,
 	city: 'Moscow',
 	username: 'username',
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import {ComponentMeta, ComponentStory} from '@storybook/react'
 import {ProfileCard} from './ProfileCard'
 import {Currency} from '@/entities/Currency'
-import {Country} from '@/entities/Country'
+import {CountryEnum} from '@/entities/Country'
 
 
 export default {
@@ -22,7 +22,7 @@ Common.args = {
 		lastname: 'Name',
 		age: 24,
 		currency: Currency.RUB,
-		country: Country.Kazakhstan,
+		country: CountryEnum.Kazakhstan,
 		city: 'Moscow',
 		username: 'username',
 		avatar: 'https://raw.githubusercontent.com/antonmc/minifig/HEAD/output.svg?sanitize=true'

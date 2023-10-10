@@ -1,4 +1,4 @@
-import {AppRouteProps, AppRoutes, RoutePath} from '@/shared/config/routeConfigTypes'
+import {AppRouteProps, AppRoutes, RoutePath} from '@/shared/types/routeConfigTypes'
 import {MainPage} from '@/pages/MainPage'
 import {AboutPage} from '@/pages/AboutPage'
 import {NotFoundPage} from '@/pages/NotFoundPage'

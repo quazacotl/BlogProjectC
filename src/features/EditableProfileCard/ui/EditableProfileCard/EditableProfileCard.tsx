@@ -11,7 +11,7 @@ import {profileActions} from '../../model/slice/profileSlice'
 import {getProfileReadonly} from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import {getProfileForm} from '../../model/selectors/getProfileForm/getProfileForm'
 import {Currency} from '@/entities/Currency'
-import {Country} from '@/entities/Country'
+import {CountryEnum} from '@/entities/Country'
 import {
 	getProfileValidateError
 } from '../../model/selectors/getProfileValidateError/getProfileValidateError'
@@ -76,7 +76,7 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
 		dispatch(profileActions.updateProfile({currency: value}))
 	}, [dispatch])
 
-	const handleChangeCountry = useCallback((value?: Country) => {
+	const handleChangeCountry = useCallback((value?: CountryEnum) => {
 		dispatch(profileActions.updateProfile({country: value}))
 	}, [dispatch])
 

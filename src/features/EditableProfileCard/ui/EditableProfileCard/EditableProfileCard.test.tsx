@@ -4,7 +4,7 @@ import {componentRender} from '@/shared/lib/tests/componentRender/componentRende
 import {Profile} from '../../model/types/profile'
 import {profileReducer} from '../../model/slice/profileSlice'
 import {Currency} from '@/entities/Currency'
-import {Country} from '@/entities/Country'
+import {CountryEnum} from '@/entities/Country'
 import {screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import {$api} from '@/shared/api/api'
@@ -15,7 +15,7 @@ const profile: Profile = {
 	lastname: 'admin',
 	age: 34,
 	currency: Currency.EUR,
-	country: Country.Kazakhstan,
+	country: CountryEnum.Kazakhstan,
 	city: 'Moscow',
 	username: 'asdmin3'
 }

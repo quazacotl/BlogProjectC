@@ -1,7 +1,7 @@
 import {StateSchema} from '@/app/providers/StoreProvider'
 import {getProfileData} from './getProfileData'
 import {Currency} from '@/entities/Currency'
-import {Country} from '@/entities/Country'
+import {CountryEnum} from '@/entities/Country'
 
 describe('getProfileData.test', () => {
 	test('should return value', () => {
@@ -10,7 +10,7 @@ describe('getProfileData.test', () => {
 			lastname: 'Name',
 			age: 24,
 			currency: Currency.RUB,
-			country: Country.Kazakhstan,
+			country: CountryEnum.Kazakhstan,
 			city: 'Moscow',
 			username: 'username',
 		}

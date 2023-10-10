@@ -2,22 +2,22 @@ import {SelectOption} from '@/shared/ui/Select/Select'
 import {useTranslation} from 'react-i18next'
 
 import {memo, useCallback} from 'react'
-import {Country} from '../../model/consts/country'
+import {CountryEnum} from '../../model/consts/country'
 import {ListBox} from '@/shared/ui/Popups'
 
 interface CountrySelectProps {
 	className?: string,
-	value?: Country,
+	value?: CountryEnum,
 	readonly?: boolean,
-	onChange?: (value: Country) => void
+	onChange?: (value: CountryEnum) => void
 }
 
-const options: SelectOption<Country>[] = [
-	{value: Country.Belarus, content: Country.Belarus},
-	{value: Country.Russia, content: Country.Russia},
-	{value: Country.Ukraine, content: Country.Ukraine},
-	{value: Country.Armenia, content: Country.Armenia},
-	{value: Country.Kazakhstan, content: Country.Kazakhstan},
+const options: SelectOption<CountryEnum>[] = [
+	{value: CountryEnum.Belarus, content: CountryEnum.Belarus},
+	{value: CountryEnum.Russia, content: CountryEnum.Russia},
+	{value: CountryEnum.Ukraine, content: CountryEnum.Ukraine},
+	{value: CountryEnum.Armenia, content: CountryEnum.Armenia},
+	{value: CountryEnum.Kazakhstan, content: CountryEnum.Kazakhstan},
 ]
 export const CountrySelect = memo((props: CountrySelectProps) => {
 	CountrySelect.displayName = 'CountrySelect'
@@ -25,7 +25,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
 	const {t} = useTranslation()
 
 	const onChangeHandler = useCallback((value: string) => {
-		onChange?.(value as Country)
+		onChange?.(value as CountryEnum)
 	}, [onChange])
 
 	return (

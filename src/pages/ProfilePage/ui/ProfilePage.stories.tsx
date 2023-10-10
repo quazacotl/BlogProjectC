@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import ProfilePage from './ProfilePage'
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator'
 import {Currency} from '@/entities/Currency'
-import {Country} from '@/entities/Country'
+import {CountryEnum} from '@/entities/Country'
 import avatar from '@/shared/assets/test/img.png'
 
 
@@ -28,7 +28,7 @@ Common.decorators = [StoreDecorator({
 			lastname: 'Name',
 			age: 24,
 			currency: Currency.RUB,
-			country: Country.Kazakhstan,
+			country: CountryEnum.Kazakhstan,
 			city: 'Moscow',
 			username: 'username',
 			avatar: avatar

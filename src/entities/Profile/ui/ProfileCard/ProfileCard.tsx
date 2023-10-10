@@ -7,7 +7,7 @@ import {Profile} from '@/features/EditableProfileCard'
 import {Loader} from '@/shared/ui/Loader'
 import {Avatar} from '@/shared/ui/Avatar/Avatar'
 import {Currency, CurrencySelect} from '@/entities/Currency'
-import {Country, CountrySelect} from '@/entities/Country'
+import {CountryEnum, CountrySelect} from '@/entities/Country'
 import {HStack, VStack} from '@/shared/ui/Stack'
 
 interface ProfileCardProps {
@@ -23,7 +23,7 @@ interface ProfileCardProps {
 	handleChangeUsername?: (value?: string) => void
 	handleChangeAvatar?: (value?: string) => void,
 	handleChangeCurrency?: (currency: Currency) => void
-	handleChangeCountry?: (country: Country) => void
+	handleChangeCountry?: (country: CountryEnum) => void
 
 }
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -111,7 +111,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 				readonly={readonly}
 			/>
 			<CountrySelect
-				value={data?.country || Country.Russia}
+				value={data?.country || CountryEnum.Russia}
 				onChange={handleChangeCountry}
 				readonly={readonly}
 			/>

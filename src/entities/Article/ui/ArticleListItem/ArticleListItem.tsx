@@ -13,7 +13,7 @@ import {
 	Article, ArticleTextBlock,
 } from '../../model/types/article'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import {RoutePath} from '@/shared/config/routeConfigTypes'
+import {RoutePath} from '@/shared/types/routeConfigTypes'
 import {AppLink} from '@/shared/ui/AppLink/AppLink'
 import {ArticleBlockType, ArticleView} from '../../model/consts/articleConsts'
 
