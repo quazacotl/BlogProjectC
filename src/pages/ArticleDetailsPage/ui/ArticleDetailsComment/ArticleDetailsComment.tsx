@@ -15,7 +15,7 @@ import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect'
 import {
 	fetchCommentsByArticleId
-} from '@/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 
 interface ArticleDetailsCommentProps {
     className?: string

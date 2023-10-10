@@ -19,7 +19,7 @@ import {Text, TextTheme} from '@/shared/ui/Text/Text'
 import {useTranslation} from 'react-i18next'
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect'
 import {VStack} from '@/shared/ui/Stack'
-import {ValidateProfileError} from '@/features/EditableProfileCard/model/consts/editableProfileCardConsts'
+import {ValidateProfileError} from '../../model/consts/editableProfileCardConsts'
 
 interface EditableProfileCardProps {
     className?: string

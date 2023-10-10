@@ -1,5 +1,5 @@
 import { rtkApi } from '@/shared/api/rtkApi'
-import {Rating} from '@/features/articleRating'
+import {Rating} from '../../../model/types/types'
 
 interface GetRatingParams {
 	userId: string

@@ -1,7 +1,6 @@
 import {StateSchema} from '@/app/providers/StoreProvider'
 import {getProfileValidateError} from './getProfileValidateError'
-
-import {ValidateProfileError} from '@/features/EditableProfileCard/model/consts/editableProfileCardConsts'
+import {ValidateProfileError} from '../../consts/editableProfileCardConsts'
 
 describe('getProfileValidateError.test', () => {
 	test('should return incorrect user data', () => {

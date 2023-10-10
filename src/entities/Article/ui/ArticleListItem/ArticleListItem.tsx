@@ -15,8 +15,7 @@ import {
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import {RoutePath} from '@/shared/config/routeConfigTypes'
 import {AppLink} from '@/shared/ui/AppLink/AppLink'
-import {useTranslation} from 'react-i18next'
-import {ArticleBlockType, ArticleView} from '@/entities/Article/model/consts/articleConsts'
+import {ArticleBlockType, ArticleView} from '../../model/consts/articleConsts'
 
 interface ArticleListItemProps {
     className?: string;
@@ -29,7 +28,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 	ArticleListItem.displayName = 'ArticleListItem'
 	const { className, article, view, target } = props
 	const navigate = useNavigate()
-	const {t} = useTranslation()
 
 	const onOpenArticle = useCallback(() => {
 		navigate(RoutePath['article-details'] + article.id)
