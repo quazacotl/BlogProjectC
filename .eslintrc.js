@@ -26,7 +26,8 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
-    "fsd-imports/path-checker": ['error', {alias: '@'}]
+    "fsd-imports/path-checker": ['error', {alias: '@'}],
+    "fsd-imports/public-api-imports": ['error', {alias: '@'}]
   },
   'settings': {
     'react': {

@@ -1,5 +1,5 @@
-import {Currency} from '@/entities/Currency/model/consts/currency'
-import {Country} from '@/entities/Country/model/consts/country'
+import {Currency} from '@/entities/currency'
+import {Country} from '@/entities/country'
 import {ValidateProfileError} from '../consts/editableProfileCardConsts'
 
 export interface Profile {
