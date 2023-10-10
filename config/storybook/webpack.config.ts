@@ -24,7 +24,7 @@ export default ({config}: {config: webpack.Configuration}) => {
 
 	config.plugins!.push(new webpack.DefinePlugin({
 		__IS_DEV__: true,
-		__API__: JSON.stringify('http://api.ru'),
+		__API__: JSON.stringify('http://api'),
 		__PROJECT__: JSON.stringify('storybook')
 	}))
 
