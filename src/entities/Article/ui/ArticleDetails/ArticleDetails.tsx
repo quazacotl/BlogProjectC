@@ -1,29 +1,29 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Text, TextSize } from '@/shared/ui/Text'
-import { Skeleton } from '@/shared/ui/Skeleton'
-import { Avatar } from '@/shared/ui/Avatar'
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
-import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg'
-import { Icon } from '@/shared/ui/Icon'
 import { ArticleCodeBlockComponent } from '../../ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../../ui/ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import cls from './ArticleDetails.module.scss'
 import {
 	getArticleDetailsData,
 	getArticleDetailsError,
 	getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails'
 import { ArticleBlock } from '../../model/types/article'
+import {ArticleBlockType} from '../../model/consts/articleConsts'
+import cls from './ArticleDetails.module.scss'
+import { Text, TextSize } from '@/shared/ui/Text'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { Avatar } from '@/shared/ui/Avatar'
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
+import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg'
+import { Icon } from '@/shared/ui/Icon'
 import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {HStack, VStack} from '@/shared/ui/Stack'
-import {ArticleBlockType} from '../../model/consts/articleConsts'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 interface ArticleDetailsProps {
     className?: string;
