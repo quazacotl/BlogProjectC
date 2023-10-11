@@ -1,9 +1,10 @@
+import {memo, useCallback} from 'react'
 import {useTranslation} from 'react-i18next'
 
-import {memo, useCallback} from 'react'
 import {CountryEnum} from '../../model/consts/country'
-import {SelectOption} from '@/shared/ui/Select'
+
 import {ListBox} from '@/shared/ui/Popups'
+import {SelectOption} from '@/shared/ui/Select'
 
 interface CountrySelectProps {
 	className?: string,

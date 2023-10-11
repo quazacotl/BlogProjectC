@@ -1,29 +1,32 @@
-import { useTranslation } from 'react-i18next'
 import { memo, useCallback, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { ArticleCodeBlockComponent } from '../../ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent'
-import { ArticleImageBlockComponent } from '../../ui/ArticleImageBlockComponent/ArticleImageBlockComponent'
-import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
+
+import {ArticleBlockType} from '../../model/consts/articleConsts'
 import {
 	getArticleDetailsData,
 	getArticleDetailsError,
 	getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails'
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { ArticleBlock } from '../../model/types/article'
-import {ArticleBlockType} from '../../model/consts/articleConsts'
+import { ArticleCodeBlockComponent } from '../../ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent'
+import { ArticleImageBlockComponent } from '../../ui/ArticleImageBlockComponent/ArticleImageBlockComponent'
+import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent'
+
 import cls from './ArticleDetails.module.scss'
-import { Text, TextSize } from '@/shared/ui/Text'
-import { Skeleton } from '@/shared/ui/Skeleton'
-import { Avatar } from '@/shared/ui/Avatar'
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
+
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg'
-import { Icon } from '@/shared/ui/Icon'
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Icon } from '@/shared/ui/Icon'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import {HStack, VStack} from '@/shared/ui/Stack'
-import { classNames } from '@/shared/lib/classNames/classNames'
+import { Text, TextSize } from '@/shared/ui/Text'
 
 interface ArticleDetailsProps {
     className?: string;

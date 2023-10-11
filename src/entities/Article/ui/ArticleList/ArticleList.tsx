@@ -1,12 +1,15 @@
-import {useTranslation} from 'react-i18next'
 import {HTMLAttributeAnchorTarget, memo} from 'react'
-import {ArticleListItemSkeleton} from '../ArticleListItem/ArticleListItemSkeleton'
-import {ArticleListItem} from '../ArticleListItem/ArticleListItem'
-import {Article} from '../../model/types/article'
+import {useTranslation} from 'react-i18next'
+
 import {ArticleView} from '../../model/consts/articleConsts'
+import {Article} from '../../model/types/article'
+import {ArticleListItem} from '../ArticleListItem/ArticleListItem'
+import {ArticleListItemSkeleton} from '../ArticleListItem/ArticleListItemSkeleton'
+
 import cls from './ArticleList.module.scss'
-import {Text, TextSize} from '@/shared/ui/Text'
+
 import {classNames} from '@/shared/lib/classNames/classNames'
+import {Text, TextSize} from '@/shared/ui/Text'
 
 interface ArticleListProps {
     className?: string;

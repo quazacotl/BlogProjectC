@@ -1,4 +1,6 @@
+// @ts-ignore
 import webpack from 'webpack'
+// @ts-ignore
 import path from 'path'
 
 const pathToInlineSvg = path.resolve(__dirname, '../../src/shared/assets/icons')

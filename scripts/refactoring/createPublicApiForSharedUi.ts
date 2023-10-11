@@ -1,4 +1,5 @@
 import { Project } from 'ts-morph';
+// @ts-ignore
 import path from 'path';
 
 const project = new Project({});

@@ -1,5 +1,5 @@
-import {Currency} from '@/entities/Currency'
 import {CountryEnum} from '@/entities/Country'
+import {Currency} from '@/entities/Currency'
 
 export interface Profile {
 	id?: string,

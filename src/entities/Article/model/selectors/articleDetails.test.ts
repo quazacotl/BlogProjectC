@@ -3,6 +3,7 @@ import {
 	getArticleDetailsError,
 	getArticleDetailsIsLoading,
 } from './articleDetails'
+
 import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('articleDetails.test', () => {
