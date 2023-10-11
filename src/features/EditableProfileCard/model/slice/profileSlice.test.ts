@@ -1,9 +1,9 @@
-import {profileActions, profileReducer} from './profileSlice'
 import {ProfileSchema} from '../types/profile'
-import {Currency} from '@/entities/Currency'
-import {CountryEnum} from '@/entities/Country'
 import {updateProfileData} from '../services/updateProfileData/updateProfileData'
 import {ValidateProfileError} from '../consts/editableProfileCardConsts'
+import {profileActions, profileReducer} from './profileSlice'
+import {Currency} from '@/entities/Currency'
+import {CountryEnum} from '@/entities/Country'
 
 const data = {
 	first: 'User',

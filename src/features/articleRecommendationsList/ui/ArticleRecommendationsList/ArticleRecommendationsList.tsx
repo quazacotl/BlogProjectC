@@ -1,10 +1,10 @@
-import {classNames} from '@/shared/lib/classNames/classNames'
 import {useTranslation} from 'react-i18next'
 import {memo} from 'react'
+import {useGetArticleRecommendationsListQuery} from '../../api/articleRecommendationsApi'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import {Text, TextSize} from '@/shared/ui/Text'
 import {ArticleList} from '@/entities/Article'
 import {VStack} from '@/shared/ui/Stack'
-import {useGetArticleRecommendationsListQuery} from '../../api/articleRecommendationsApi'
 
 interface ArticleRecommendationsListProps {
 	className?: string

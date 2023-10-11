@@ -1,9 +1,9 @@
+import {Suspense, useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {AppRouter} from './providers/appRouter'
 import {classNames} from '@/shared/lib/classNames/classNames'
 import {Navbar} from '@/widgets/Navbar'
 import {SideBar} from '@/widgets/SideBar'
-import {AppRouter} from './providers/appRouter'
-import {Suspense, useEffect} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
 import {getUserInited, userSlice} from '@/entities/User'
 import {useTheme} from '@/shared/lib/hooks/useTheme'
 

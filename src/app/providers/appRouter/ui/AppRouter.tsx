@@ -1,9 +1,9 @@
 import {Suspense, useCallback} from 'react'
 import {Route, Routes} from 'react-router-dom'
 import {routeConfig} from '../config/routeConfig'
+import {RequireAuth} from './RequireAuth'
 import {PageLoader} from '@/widgets/PageLoader'
 import {AppRouteProps} from '@/shared/types/routeConfigTypes'
-import {RequireAuth} from './RequireAuth'
 
 export const AppRouter = () => {
 	const renderWithWrapper = useCallback((route: AppRouteProps) => {

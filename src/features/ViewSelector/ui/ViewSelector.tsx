@@ -1,5 +1,5 @@
-import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './ViewSelector.module.scss'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import {ArticleView} from '@/entities/Article'
 import ListViewIcon from '@/shared/assets/icons/ListView.svg'
 import TileViewIcon from '@/shared/assets/icons/TileView.svg'

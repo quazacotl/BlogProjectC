@@ -1,25 +1,25 @@
-import {classNames} from '@/shared/lib/classNames/classNames'
-import {ProfileCard} from '@/entities/Profile'
 import {useSelector} from 'react-redux'
+import {useCallback} from 'react'
+import {useTranslation} from 'react-i18next'
 import {getProfileError} from '../../model/selectors/getProfileError/getProfileError'
 import {getProfileIsLoading} from '../../model/selectors/getProfileIsLoading/getProfileIsLoading'
 import {ProfilePageHeader} from '../ProfilePageHeader/ProfilePageHeader'
-import {useCallback} from 'react'
 import {fetchProfileData} from '../../model/services/fetchProfileData/fetchProfileData'
-import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {profileActions} from '../../model/slice/profileSlice'
 import {getProfileReadonly} from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import {getProfileForm} from '../../model/selectors/getProfileForm/getProfileForm'
-import {Currency} from '@/entities/Currency'
-import {CountryEnum} from '@/entities/Country'
 import {
 	getProfileValidateError
 } from '../../model/selectors/getProfileValidateError/getProfileValidateError'
+import {ValidateProfileError} from '../../model/consts/editableProfileCardConsts'
+import {classNames} from '@/shared/lib/classNames/classNames'
+import {ProfileCard} from '@/entities/Profile'
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
+import {Currency} from '@/entities/Currency'
+import {CountryEnum} from '@/entities/Country'
 import {Text, TextTheme} from '@/shared/ui/Text'
-import {useTranslation} from 'react-i18next'
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect'
 import {VStack} from '@/shared/ui/Stack'
-import {ValidateProfileError} from '../../model/consts/editableProfileCardConsts'
 
 interface EditableProfileCardProps {
     className?: string

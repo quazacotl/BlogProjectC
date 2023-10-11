@@ -1,21 +1,21 @@
-import {classNames} from '@/shared/lib/classNames/classNames'
-import cls from './ArticlePageFilters.module.scss'
-import {ViewSelector} from '@/features/ViewSelector'
 import {useCallback} from 'react'
-import {ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleView} from '@/entities/Article'
-import {articlesPageActions} from '../../model/slices/articlesPageSlice'
-import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {useSelector} from 'react-redux'
+import {useTranslation} from 'react-i18next'
+import {articlesPageActions} from '../../model/slices/articlesPageSlice'
 import {
 	getArticlesPageOrder, getArticlesPageSearch,
 	getArticlesPageSort, getArticlesPageType,
 	getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
-import {useTranslation} from 'react-i18next'
+import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList'
+import cls from './ArticlePageFilters.module.scss'
+import {classNames} from '@/shared/lib/classNames/classNames'
+import {ViewSelector} from '@/features/ViewSelector'
+import {ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleView} from '@/entities/Article'
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {Card} from '@/shared/ui/Card'
 import {Input} from '@/shared/ui/Input'
 import {SortOrder} from '@/shared/types'
-import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList'
 import {useDebounce} from '@/shared/lib/hooks/useDebounce'
 import {ArticleType} from '@/entities/Article'
 

@@ -17,8 +17,10 @@ module.exports = {
     'ecmaVersion': 'latest',
     'sourceType': 'module'
   },
-  'plugins': ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'eslint-plugin-fsd-imports'],
+  'plugins': ['react', 'import', '@typescript-eslint', 'i18next', 'react-hooks', 'eslint-plugin-fsd-imports', 'unused-imports'],
   'rules': {
+    'import/order': 'warn',
+    "@typescript-eslint/no-explicit-any": "warn",
     'indent': ['error', 'tab'],
     'linebreak-style': ['error', 'unix'],
     'quotes': ['error', 'single'],
@@ -35,7 +37,13 @@ module.exports = {
     "fsd-imports/layer-imports": ['error', {
       alias: '@',
       ignoreImportPatterns: ['**/StoreProvider', '**/testing']
-    }]
+    }],
+    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ]
   },
   'settings': {
     'react': {

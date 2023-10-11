@@ -1,16 +1,16 @@
-import {classNames} from '@/shared/lib/classNames/classNames'
-import cls from './AddCommentForm.module.scss'
-import {Input} from '@/shared/ui/Input'
 import {useTranslation} from 'react-i18next'
-import {Button, ButtonTheme} from '@/shared/ui/Button'
-import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
 import {useSelector} from 'react-redux'
+import {memo, useCallback} from 'react'
 import {
 	getAddCommentFormText
 } from '../model/selectors/AddCommentFormSelectors'
-import {memo, useCallback} from 'react'
-import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {addCommentFormActions, addCommentFormReducer} from '../model/slice/AddCommentFormSlice'
+import cls from './AddCommentForm.module.scss'
+import {classNames} from '@/shared/lib/classNames/classNames'
+import {Input} from '@/shared/ui/Input'
+import {Button, ButtonTheme} from '@/shared/ui/Button'
+import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {HStack} from '@/shared/ui/Stack'
 
 interface AddCommentFormProps {
