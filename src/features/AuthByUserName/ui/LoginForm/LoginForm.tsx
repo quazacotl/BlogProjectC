@@ -1,19 +1,22 @@
+import {memo, useCallback} from 'react'
 import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
-import {memo, useCallback} from 'react'
-import {loginActions, loginReducer} from '../../model/slice/loginSlice'
-import {loginByUserName} from '../../model/services/loginByUserName/loginByUserName'
-import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername'
-import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword'
-import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
+
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError'
+import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
+import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword'
+import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername'
+import {loginByUserName} from '../../model/services/loginByUserName/loginByUserName'
+import {loginActions, loginReducer} from '../../model/slice/loginSlice'
+
 import cls from './LoginForm.module.scss'
-import {Text, TextTheme} from '@/shared/ui/Text'
-import {Input} from '@/shared/ui/Input'
-import {Button, ButtonTheme} from '@/shared/ui/Button'
+
 import {classNames} from '@/shared/lib/classNames/classNames'
 import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
+import {Button, ButtonTheme} from '@/shared/ui/Button'
+import {Input} from '@/shared/ui/Input'
+import {Text, TextTheme} from '@/shared/ui/Text'
 
 
 interface LoginFormProps {

@@ -1,13 +1,16 @@
 import {memo, useCallback} from 'react'
-import {articlesPageReducer} from '../../model/slices/articlesPageSlice'
+
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlePage/fetchNextArticlePage'
-import {ArticlePageFilters} from '../ArticlePageFilters/ArticlePageFilters'
+import {articlesPageReducer} from '../../model/slices/articlesPageSlice'
 import {ArticleInfiniteList} from '../ArticleInfiniteList/ArticleInfiniteList'
+import {ArticlePageFilters} from '../ArticlePageFilters/ArticlePageFilters'
+
 import cls from './ArticlesPage.module.scss'
+
+import {classNames} from '@/shared/lib/classNames/classNames'
 import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {Page} from '@/widgets/Page'
-import {classNames} from '@/shared/lib/classNames/classNames'
 
 interface ArticlesPageProps {
     className?: string

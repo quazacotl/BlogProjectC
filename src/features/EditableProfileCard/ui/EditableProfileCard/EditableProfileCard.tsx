@@ -1,25 +1,27 @@
-import {useSelector} from 'react-redux'
 import {useCallback} from 'react'
 import {useTranslation} from 'react-i18next'
+import {useSelector} from 'react-redux'
+
+import {ValidateProfileError} from '../../model/consts/editableProfileCardConsts'
 import {getProfileError} from '../../model/selectors/getProfileError/getProfileError'
-import {getProfileIsLoading} from '../../model/selectors/getProfileIsLoading/getProfileIsLoading'
-import {ProfilePageHeader} from '../ProfilePageHeader/ProfilePageHeader'
-import {fetchProfileData} from '../../model/services/fetchProfileData/fetchProfileData'
-import {profileActions} from '../../model/slice/profileSlice'
-import {getProfileReadonly} from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import {getProfileForm} from '../../model/selectors/getProfileForm/getProfileForm'
+import {getProfileIsLoading} from '../../model/selectors/getProfileIsLoading/getProfileIsLoading'
+import {getProfileReadonly} from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import {
 	getProfileValidateError
 } from '../../model/selectors/getProfileValidateError/getProfileValidateError'
-import {ValidateProfileError} from '../../model/consts/editableProfileCardConsts'
-import {classNames} from '@/shared/lib/classNames/classNames'
-import {ProfileCard} from '@/entities/Profile'
-import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
-import {Currency} from '@/entities/Currency'
+import {fetchProfileData} from '../../model/services/fetchProfileData/fetchProfileData'
+import {profileActions} from '../../model/slice/profileSlice'
+import {ProfilePageHeader} from '../ProfilePageHeader/ProfilePageHeader'
+
 import {CountryEnum} from '@/entities/Country'
-import {Text, TextTheme} from '@/shared/ui/Text'
+import {Currency} from '@/entities/Currency'
+import {ProfileCard} from '@/entities/Profile'
+import {classNames} from '@/shared/lib/classNames/classNames'
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect'
 import {VStack} from '@/shared/ui/Stack'
+import {Text, TextTheme} from '@/shared/ui/Text'
 
 interface EditableProfileCardProps {
     className?: string

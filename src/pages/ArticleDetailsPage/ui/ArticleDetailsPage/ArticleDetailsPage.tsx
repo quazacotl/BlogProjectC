@@ -1,17 +1,19 @@
-import {useTranslation} from 'react-i18next'
 import {memo, useCallback} from 'react'
+import {useTranslation} from 'react-i18next'
 import {useNavigate, useParams} from 'react-router-dom'
+
 import {articleDetailsPageReducer} from '../../model/slices'
 import {ArticleDetailsComment} from '../ArticleDetailsComment/ArticleDetailsComment'
-import {classNames} from '@/shared/lib/classNames/classNames'
+
 import {ArticleDetails} from '@/entities/Article'
-import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
-import {Button, ButtonTheme} from '@/shared/ui/Button'
-import {RoutePath} from '@/shared/types/routeConfigTypes'
-import {Page} from '@/widgets/Page'
-import {VStack} from '@/shared/ui/Stack'
-import {ArticleRecommendationsList} from '@/features/articleRecommendationsList'
 import {ArticleRating} from '@/features/articleRating'
+import {ArticleRecommendationsList} from '@/features/articleRecommendationsList'
+import {classNames} from '@/shared/lib/classNames/classNames'
+import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
+import {RoutePath} from '@/shared/types/routeConfigTypes'
+import {Button, ButtonTheme} from '@/shared/ui/Button'
+import {VStack} from '@/shared/ui/Stack'
+import {Page} from '@/widgets/Page'
 
 interface ArticleDetailsPageProps {
 	className?: string

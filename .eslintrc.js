@@ -19,7 +19,23 @@ module.exports = {
   },
   'plugins': ['react', 'import', '@typescript-eslint', 'i18next', 'react-hooks', 'eslint-plugin-fsd-imports', 'unused-imports'],
   'rules': {
-    'import/order': 'warn',
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        }
+      }
+    ],
     "@typescript-eslint/no-explicit-any": "warn",
     'indent': ['error', 'tab'],
     'linebreak-style': ['error', 'unix'],

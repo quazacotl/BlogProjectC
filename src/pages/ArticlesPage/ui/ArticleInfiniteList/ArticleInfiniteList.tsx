@@ -1,11 +1,13 @@
 import {useSelector} from 'react-redux'
 import {useSearchParams} from 'react-router-dom'
-import {getArticles} from '../../model/slices/articlesPageSlice'
+
 import {getArticlesPageIsLoading, getArticlesPageView} from '../../model/selectors/articlesPageSelectors'
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage'
-import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect'
-import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
+import {getArticles} from '../../model/slices/articlesPageSlice'
+
 import {ArticleList} from '@/entities/Article'
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
+import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect'
 
 interface ArticleInfiniteListProps {
     className?: string

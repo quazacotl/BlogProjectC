@@ -1,7 +1,9 @@
 import {ValidateProfileError} from '../../consts/editableProfileCardConsts'
+
 import {validateProfileData} from './validateProfile'
-import {Currency} from '@/entities/Currency'
+
 import {CountryEnum} from '@/entities/Country'
+import {Currency} from '@/entities/Currency'
 
 
 const data = {

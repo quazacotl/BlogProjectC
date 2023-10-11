@@ -1,7 +1,9 @@
 import {ValidateProfileError} from '../../consts/editableProfileCardConsts'
+
 import {updateProfileData} from './updateProfileData'
-import {Currency} from '@/entities/Currency'
+
 import {CountryEnum} from '@/entities/Country'
+import {Currency} from '@/entities/Currency'
 import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 
 

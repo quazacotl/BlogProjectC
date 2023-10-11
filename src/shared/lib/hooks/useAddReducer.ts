@@ -1,6 +1,7 @@
+import {Reducer} from '@reduxjs/toolkit'
 import {useEffect} from 'react'
 import {useDispatch, useStore} from 'react-redux'
-import {Reducer} from '@reduxjs/toolkit'
+
 import {ReduxStoreWithManager, StateSchema} from '@/app/providers/StoreProvider'
 // eslint-disable-next-line fsd-imports/layer-imports
 import {StateSchemaKey} from '@/app/providers/StoreProvider/config/stateSchema'

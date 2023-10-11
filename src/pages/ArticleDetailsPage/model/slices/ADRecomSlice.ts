@@ -3,11 +3,10 @@ import {
 	createSlice, PayloadAction,
 } from '@reduxjs/toolkit'
 
-import { ADRecomSchema } from '../types/ADRecomSchema'
 import {fetchArticlesRecom} from '../../model/services/fetchArticleRecom/fetchArticleRecom'
+import { ADRecomSchema } from '../types/ADRecomSchema'
+
 import { StateSchema } from '@/app/providers/StoreProvider'
-
-
 import {Article} from '@/entities/Article'
 
 const recomAdapter = createEntityAdapter<Article>({

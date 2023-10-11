@@ -1,9 +1,11 @@
 // import {classNames} from 'shared/lib/classNames/classNames'
 import React, {Suspense} from 'react'
+
 import {LoginFormAsync} from '../LoginForm/LoginForm.async'
+
+import {Loader} from '@/shared/ui/Loader'
 import {Modal} from '@/shared/ui/Modal'
 import {Portal} from '@/shared/ui/Portal'
-import {Loader} from '@/shared/ui/Loader'
 
 interface LoginModalProps {
     className?: string,

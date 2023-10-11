@@ -1,8 +1,9 @@
 import cls from './ViewSelector.module.scss'
-import {classNames} from '@/shared/lib/classNames/classNames'
+
 import {ArticleView} from '@/entities/Article'
 import ListViewIcon from '@/shared/assets/icons/ListView.svg'
 import TileViewIcon from '@/shared/assets/icons/TileView.svg'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import {Button, ButtonTheme} from '@/shared/ui/Button'
 import {Icon} from '@/shared/ui/Icon'
 

@@ -1,7 +1,9 @@
-import { useTranslation } from 'react-i18next'
 import {memo, useCallback} from 'react'
+import { useTranslation } from 'react-i18next'
 import {useSelector} from 'react-redux'
+
 import {useGetArticleRating, useRateArticle} from '../../model/services/api/articleRatingApi'
+
 import {Rating} from '@/entities/Rating'
 import {getUserAuthData} from '@/entities/User'
 import {Skeleton} from '@/shared/ui/Skeleton'
