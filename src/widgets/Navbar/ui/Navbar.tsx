@@ -10,6 +10,7 @@ import {HStack} from '@/shared/ui/Stack'
 import {NotificationButton} from '@/features/notificationButton'
 import {AvatarDropdown} from '@/features/avatarDropdown'
 
+//
 
 interface NavbarProps {
     className?: string
