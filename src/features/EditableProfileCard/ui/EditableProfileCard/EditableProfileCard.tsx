@@ -15,7 +15,7 @@ import {CountryEnum} from '@/entities/Country'
 import {
 	getProfileValidateError
 } from '../../model/selectors/getProfileValidateError/getProfileValidateError'
-import {Text, TextTheme} from '@/shared/ui/Text/Text'
+import {Text, TextTheme} from '@/shared/ui/Text'
 import {useTranslation} from 'react-i18next'
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect'
 import {VStack} from '@/shared/ui/Stack'

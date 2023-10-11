@@ -1,8 +1,9 @@
-import {StyleDecorator} from '@/shared/config/storybook/StyleDecorator'
-import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator'
-import {RouterDecorator} from '@/shared/config/storybook/RouterDecorator'
 import {Preview} from "@storybook/react";
-import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator'
+import {StoreDecorator} from '../../src/shared/config/storybook/StoreDecorator'
+import {StyleDecorator} from '../../src/shared/config/storybook/StyleDecorator'
+import {ThemeDecorator} from '../../src/shared/config/storybook/ThemeDecorator'
+import {RouterDecorator} from '../../src/shared/config/storybook/RouterDecorator'
+
 
 
 // export const parameters = {

@@ -1,7 +1,7 @@
 import React, {memo, useCallback, useState} from 'react'
 import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
-import {Button, ButtonTheme} from '@/shared/ui/Button/Button'
+import {Button, ButtonTheme} from '@/shared/ui/Button'
 import {useTranslation} from 'react-i18next'
 import {LoginModal} from '@/features/AuthByUserName'
 import {getUserAuthData} from '@/entities/User'

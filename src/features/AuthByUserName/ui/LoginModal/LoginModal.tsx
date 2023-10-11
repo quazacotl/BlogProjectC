@@ -1,6 +1,6 @@
 // import {classNames} from 'shared/lib/classNames/classNames'
-import {Modal} from '@/shared/ui/Modal/Modal'
-import {Portal} from '@/shared/ui/Portal/Portal'
+import {Modal} from '@/shared/ui/Modal'
+import {Portal} from '@/shared/ui/Portal'
 import React, {Suspense} from 'react'
 import {Loader} from '@/shared/ui/Loader'
 import {LoginFormAsync} from '../LoginForm/LoginForm.async'

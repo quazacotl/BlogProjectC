@@ -1,4 +1,4 @@
-import {SelectOption} from '@/shared/ui/Select/Select'
+import {SelectOption} from '@/shared/ui/Select'
 import {useTranslation} from 'react-i18next'
 import {Currency} from '../../model/consts/currency'
 import {memo, useCallback} from 'react'

@@ -2,7 +2,7 @@ import {classNames} from '@/shared/lib/classNames/classNames'
 import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
 import {EditableProfileCard, profileReducer} from '@/features/EditableProfileCard'
 import {Page} from '@/widgets/Page'
-import {Text} from '@/shared/ui/Text/Text'
+import {Text} from '@/shared/ui/Text'
 import {useParams} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
 
