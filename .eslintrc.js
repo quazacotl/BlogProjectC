@@ -29,7 +29,12 @@ module.exports = {
     "fsd-imports/path-checker": ['error', {alias: '@'}],
     "fsd-imports/public-api-imports": ['error', {
       alias: '@',
-      testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
+      testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+      ignoreImportPatterns: ['**/stateSchema']
+    }],
+    "fsd-imports/layer-imports": ['error', {
+      alias: '@',
+      ignoreImportPatterns: ['**/StoreProvider', '**/testing']
     }]
   },
   'settings': {
