@@ -39,8 +39,7 @@ export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
 		{
 			value: ArticleSortField.TITLE,
 			content: t('названию')
-		}
-		,
+		},
 		{
 			value: ArticleSortField.VIEWS,
 			content: t('просмотрам')

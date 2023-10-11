@@ -8,9 +8,9 @@ import {ArticleDetailsComment} from '../ArticleDetailsComment/ArticleDetailsComm
 import {ArticleDetails} from '@/entities/Article'
 import {ArticleRating} from '@/features/articleRating'
 import {ArticleRecommendationsList} from '@/features/articleRecommendationsList'
+import {getRouteArticles} from '@/shared/const/router'
 import {classNames} from '@/shared/lib/classNames/classNames'
 import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
-import {RoutePath} from '@/shared/types/routeConfigTypes'
 import {Button, ButtonTheme} from '@/shared/ui/Button'
 import {VStack} from '@/shared/ui/Stack'
 import {Page} from '@/widgets/Page'
@@ -33,7 +33,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
 
 	const handleBack = useCallback(() => {
-		navigate(RoutePath.articles)
+		navigate(getRouteArticles())
 	}, [navigate])
 
 	if (!id && __PROJECT__ !== 'storybook') {

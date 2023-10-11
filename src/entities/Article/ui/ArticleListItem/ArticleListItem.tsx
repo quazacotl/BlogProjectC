@@ -10,8 +10,8 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import cls from './ArticleListItem.module.scss'
 
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
+import {getRouteArticleDetails} from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import {RoutePath} from '@/shared/types/routeConfigTypes'
 import {AppLink} from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Button, ButtonTheme } from '@/shared/ui/Button'
@@ -32,7 +32,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 	const navigate = useNavigate()
 
 	const onOpenArticle = useCallback(() => {
-		navigate(RoutePath['article-details'] + article.id)
+		navigate(getRouteArticleDetails(article.id))
 	}, [article.id, navigate])
 
 	const types = <Text text={article.type.join(', ')} className={cls.types} />
@@ -63,7 +63,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 						<ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
 					)}
 					<div className={cls.footer}>
-						<AppLink to={RoutePath['article-details'] + article.id}>
+						<AppLink to={getRouteArticleDetails(article.id)}>
 							<Button
 								onClick={onOpenArticle}
 								theme={ButtonTheme.OUTLINED}
@@ -82,7 +82,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 	return (
 		<AppLink
 			target={target}
-			to={RoutePath['article-details'] + article.id}
+			to={getRouteArticleDetails(article.id)}
 			className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
 		>
 			<Card className={cls.card}>

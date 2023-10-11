@@ -37,8 +37,18 @@ const preview: Preview = {
 				date: /Date$/,
 			},
 		},
+		themes: {
+			default: 'normal',
+			list: [
+				{ name: 'normal', class: 'normal', color: '#c8c8c8' },
+				{ name: 'dark', class: 'dark', color: '#404142' },
+				{ name: 'orange', class: 'orange', color: '#cb731a' }
+			],
+			target: '.app'
+		},
 	},
-	decorators: [StyleDecorator, ThemeDecorator, RouterDecorator, StoreDecorator({})]
+	decorators: [StyleDecorator, ThemeDecorator, RouterDecorator, StoreDecorator({})],
+
 }
 
 export default preview

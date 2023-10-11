@@ -1,4 +1,4 @@
-import {AppRouteProps, AppRoutes, RoutePath} from '@/shared/types/routeConfigTypes'
+import {AppRouteProps} from '@/shared/types/routeConfigTypes'
 import {MainPage} from '@/pages/MainPage'
 import {AboutPage} from '@/pages/AboutPage'
 import {NotFoundPage} from '@/pages/NotFoundPage'
@@ -8,43 +8,50 @@ import {ArticleDetailsPage} from '@/pages/ArticleDetailsPage'
 import {AdminPanelPage} from '@/pages/AdminPanelPage'
 import {UserRole} from '@/entities/User'
 import {ForbiddenPage} from '@/pages/ForbiddenPage'
+import {
+	AppRoutes,
+	getRouteAbout, getRouteAdmin, getRouteArticleDetails,
+	getRouteArticles, getRouteForbidden,
+	getRouteMain,
+	getRouteProfile,
+} from '@/shared/const/router'
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
 	[AppRoutes.MAIN]: {
-		path: RoutePath.main,
+		path: getRouteMain(),
 		element: <MainPage/>
 	},
 	[AppRoutes.ABOUT]: {
-		path: RoutePath.about,
+		path: getRouteAbout(),
 		element: <AboutPage/>
 	},
 	[AppRoutes.PROFILE]: {
-		path: `${RoutePath.profile}:id`,
+		path: getRouteProfile(':id'),
 		element: <ProfilePage/> ,
 		authOnly: true
 	},
 	[AppRoutes.ARTICLES]: {
-		path: RoutePath.articles,
+		path: getRouteArticles(),
 		element: <ArticlesPage/> ,
 		authOnly: true
 	},
 	[AppRoutes.ARTICLE_DETAILS]: {
-		path: `${RoutePath['article-details']}:id`,
+		path: getRouteArticleDetails(':id'),
 		element: <ArticleDetailsPage/> ,
 		authOnly: true
 	},
 	[AppRoutes.ADMIN_PANEL]: {
-		path: `${RoutePath['admin-panel']}`,
+		path: getRouteAdmin(),
 		element: <AdminPanelPage/> ,
 		authOnly: true,
 		roles: [UserRole.MANAGER, UserRole.ADMIN]
 	},
 	[AppRoutes.FORBIDDEN_PAGE]: {
-		path: `${RoutePath['forbidden-page']}`,
+		path: getRouteForbidden(),
 		element: <ForbiddenPage/> ,
 	},
 	[AppRoutes.NOT_FOUND]: {
-		path: RoutePath['*'],
+		path: '*',
 		element: <NotFoundPage/>
 	},
 }
