@@ -22,11 +22,6 @@ export function buildPlugins({paths: {html, locales, buildLocales}, isDev, apiUr
 			__API__: JSON.stringify(apiUrl),
 			__PROJECT__: JSON.stringify(project)
 		}),
-		new CopyPlugin({
-			patterns: [
-				{ from: locales, to: buildLocales },
-			],
-		}),
 		new CDP({
 			exclude: /node_modules/,
 			failOnError: true
@@ -43,6 +38,12 @@ export function buildPlugins({paths: {html, locales, buildLocales}, isDev, apiUr
 
 	isDev && plugins.push(new BundleAnalyzerPlugin({
 		openAnalyzer: false
+	}))
+
+	!isDev && plugins.push(new CopyPlugin({
+		patterns: [
+			{ from: locales, to: buildLocales },
+		],
 	}))
 
 	return plugins
