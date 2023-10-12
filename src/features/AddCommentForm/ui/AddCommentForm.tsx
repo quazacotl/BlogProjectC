@@ -1,17 +1,18 @@
 import {memo, useCallback} from 'react'
 import {useTranslation} from 'react-i18next'
-import {useSelector} from 'react-redux'
 
 import {
-	getAddCommentFormText
+	useAddCommentFormText
 } from '../model/selectors/AddCommentFormSelectors'
-import {addCommentFormActions, addCommentFormReducer} from '../model/slice/AddCommentFormSlice'
+import {
+	addCommentFormReducer,
+	useCommentFormActions
+} from '../model/slice/AddCommentFormSlice'
 
 import cls from './AddCommentForm.module.scss'
 
 import {classNames} from '@/shared/lib/classNames/classNames'
 import {ReducerList, useAddReducer} from '@/shared/lib/hooks/useAddReducer'
-import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
 import {Button, ButtonTheme} from '@/shared/ui/Button'
 import {Input} from '@/shared/ui/Input'
 import {HStack} from '@/shared/ui/Stack'
@@ -29,13 +30,14 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 	AddCommentForm.displayName = 'AddCommentForm'
 	const {className, handleSendComment} = props
 	const {t} = useTranslation()
-	const text = useSelector(getAddCommentFormText)
-	const dispatch = useAppDispatch()
+	const text = useAddCommentFormText()
+
 	useAddReducer(reducers)
+	const {setText} = useCommentFormActions()
 
 	const handleInputText = useCallback((value: string) => {
-		dispatch(addCommentFormActions.setText(value))
-	},[dispatch])
+		setText(value)
+	},[setText])
 
 	const handleAddComment = useCallback(() => {
 		handleSendComment(text || '')
