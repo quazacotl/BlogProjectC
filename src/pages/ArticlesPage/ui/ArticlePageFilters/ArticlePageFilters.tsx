@@ -12,8 +12,10 @@ import {articlesPageActions} from '../../model/slices/articlesPageSlice'
 
 import cls from './ArticlePageFilters.module.scss'
 
-import {ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleView} from '@/entities/Article'
+import {ArticleSortField, ArticleView} from '@/entities/Article'
 import {ArticleType} from '@/entities/Article'
+import {ArticleSortSelector} from '@/features/ArticleSortSelector'
+import {ArticleTypeTabs} from '@/features/ArticleTypeTabs'
 import {ViewSelector} from '@/features/ViewSelector'
 import {classNames} from '@/shared/lib/classNames/classNames'
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch'
